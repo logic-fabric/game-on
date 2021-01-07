@@ -1,23 +1,24 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+function displayNav() {
+  var headerNav = document.getElementById("header-nav");
+
+  if (headerNav.className === "topnav") {
+    headerNav.className += " responsive";
   } else {
-    x.className = "topnav";
+    headerNav.className = "topnav";
   }
 }
 
 // DOM Elements
-const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
+const modalBackground = document.querySelector(".c-modal__background");
+const callToActionButtons = document.querySelectorAll(".c-btn--cta");
+const formItems = document.querySelectorAll(".c-modal__form-item");
 
 // launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+callToActionButtons.forEach((btn) =>
+  btn.addEventListener("click", launchModal)
+);
 
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+  modalBackground.style.display = "block";
 }
-
-

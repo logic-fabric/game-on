@@ -8,25 +8,29 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <!-- Custom CSS: -->
-    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
     <!-- Icons: -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <!-- Font: -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css?family=DM+Sans"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
-    <header class="topnav" id="myTopnav">
-      <div class="header-logo">
+    <header id="header-nav">
+      <div class="l-header__logo">
         <img src="img/logo-gameon.png" alt="Logo de GameOn" />
       </div>
 
-      <nav class="main-navbar">
+      <nav class="l-header__navbar">
         <ul>
           <li>
             <a href="#" class="active"><span>Accueil</span></a>
@@ -44,217 +48,210 @@
             <a href="#"><span>Évènements passés</span></a>
           </li>
           <li>
-            <a href="javascript:void(0);" class="icon" onclick="editNav()">
+            <a href="javascript:void(0);" class="icon" onclick="displayNav()">
               <i class="fa fa-bars"></i>
             </a>
           </li>
-        </ul>        
+        </ul>
       </nav>
     </header>
 
     <main>
-      <div class="hero-section">
-        <div class="hero-content">
-          <h1 class="hero-headline">
+      <div class="p-hero-banner">
+        <section class="p-hero-banner__content">
+          <h1 class="p-hero-banner__headline">
             Marathon national<br />
             de jeux vidéos
           </h1>
 
-          <p class="hero-text">
-            Vous aimez jouer ? Notre prochain évènement gaming est ouvert
-            aux réservations... Places limitées !
+          <p class="p-hero-banner__text">
+            Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux
+            réservations... Places limitées !
           </p>
 
-          <button class="btn-signup modal-btn">
-            je m'inscris
-          </button>
-        </div>
+          <button class="c-btn c-btn--cta">Je m'inscris</button>
+        </section>
 
-        <div class="hero-img">
-          <img 
-            src="img/gameuse.jpg" 
-            alt="Une gameuse victorieuse, devant son écran" 
+        <div class="p-hero-banner__img">
+          <img
+            src="img/gameuse.jpg"
+            alt="Une gameuse victorieuse, devant son écran"
           />
         </div>
 
-        <button class="btn-signup modal-btn">
-          je m'inscris
-        </button>
+        <button class="c-btn c-btn--cta">Je m'inscris</button>
       </div>
 
-      <div class="bground">
-        <div class="content">
-          <span class="close"></span>
+      <!-- MODAL FORM -->
+      <div class="c-modal__background">
+        <div class="c-modal__window">
+          <span class="close-icon"></span>
 
-          <div class="modal-body">
+          <div class="c-modal__body">
             <form
               name="reserve"
               action="index.html"
               method="get"
               onsubmit="return validate();"
             >
-              <div class="formData">
-                <label for="first">Prénom</label>                
-                <br />
+              <div class="c-modal__form-item">
+                <label for="first">Prénom</label>
                 <input
-                  class="text-control"
+                  class="c-modal__text-input"
                   type="text"
                   id="first"
                   name="first"
                   minlength="2"
                 />
-                <br />
               </div>
 
-              <div class="formData">
+              <div class="c-modal__form-item">
                 <label for="last">Nom</label>
-                <br />
                 <input
-                  class="text-control"
+                  class="c-modal__text-input"
                   type="text"
                   id="last"
                   name="last"
                 />
-                <br />
               </div>
 
-              <div class="formData">
+              <div class="c-modal__form-item">
                 <label for="email">E-mail</label>
-                <br />
                 <input
-                  class="text-control"
+                  class="c-modal__text-input"
                   type="email"
                   id="email"
                   name="email"
                 />
-                <br />
               </div>
 
-              <div class="formData">
+              <div class="c-modal__form-item">
                 <label for="birthdate">Date de naissance</label>
-                <br />
                 <input
-                  class="text-control"
+                  class="c-modal__text-input"
                   type="date"
                   id="birthdate"
                   name="birthdate"
                 />
-                <br />
               </div>
 
-              <div class="formData">
+              <div class="c-modal__form-item">
                 <label for="quantity">
                   À combien de tournois GameOn avez-vous déjà participé ?
                 </label>
-                <br />
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input
+                  type="number"
+                  class="c-modal__text-input"
+                  id="quantity"
+                  name="quantity"
+                  min="0"
+                  max="99"
+                />
               </div>
 
-              <p class="text-label">Quelles villes ?</p>
+              <label class="c-modal__text-label">Quelles villes ?</label>
 
-              <div class="formData">
+              <div class="c-modal__form-item">
+                <!-- Radio buttons: -->
                 <input
-                  class="checkbox-input"
+                  class="c-modal__radio-btn"
                   type="radio"
                   id="location1"
                   name="location"
                   value="New York"
                 />
-                <label class="checkbox-label" for="location1">
-                  <span class="checkbox-icon"></span>
+                <label class="c-modal__radio-label" for="location1">
+                  <span class="radio-icon"></span>
                   New York
                 </label>
 
                 <input
-                  class="checkbox-input"
+                  class="c-modal__radio-btn"
                   type="radio"
                   id="location2"
                   name="location"
                   value="San Francisco"
                 />
-                <label class="checkbox-label" for="location2">
-                  <span class="checkbox-icon"></span>
+                <label class="c-modal__radio-label" for="location2">
+                  <span class="radio-icon"></span>
                   San Francisco
                 </label>
 
                 <input
-                  class="checkbox-input"
+                  class="c-modal__radio-btn"
                   type="radio"
                   id="location3"
                   name="location"
                   value="Seattle"
                 />
-                <label class="checkbox-label" for="location3">
-                  <span class="checkbox-icon"></span>
+                <label class="c-modal__radio-label" for="location3">
+                  <span class="radio-icon"></span>
                   Seattle
                 </label>
 
                 <input
-                  class="checkbox-input"
+                  class="c-modal__radio-btn"
                   type="radio"
                   id="location4"
                   name="location"
                   value="Chicago"
                 />
-                <label class="checkbox-label" for="location4">
-                  <span class="checkbox-icon"></span>
+                <label class="c-modal__radio-label" for="location4">
+                  <span class="radio-icon"></span>
                   Chicago
                 </label>
                 <input
-                  class="checkbox-input"
+                  class="c-modal__radio-btn"
                   type="radio"
                   id="location5"
                   name="location"
                   value="Boston"
                 />
-                <label class="checkbox-label" for="location5">
-                  <span class="checkbox-icon"></span>
+                <label class="c-modal__radio-label" for="location5">
+                  <span class="radio-icon"></span>
                   Boston
                 </label>
 
                 <input
-                  class="checkbox-input"
+                  class="c-modal__radio-btn"
                   type="radio"
                   id="location6"
                   name="location"
                   value="Portland"
                 />
-                <label class="checkbox-label" for="location6">
-                  <span class="checkbox-icon"></span>
+                <label class="c-modal__radio-label" for="location6">
+                  <span class="radio-icon"></span>
                   Portland
                 </label>
               </div>
 
-              <div class="formData">
+              <!-- Checkboxes: -->
+              <div class="c-modal__form-item">
                 <input
-                  class="checkbox-input"
+                  class="c-modal__checkbox"
                   type="checkbox"
                   id="checkbox1"
                   required
                   checked
                 />
-                <label class="checkbox2-label" for="checkbox1">
+                <label class="c-modal__checkbox-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
 
-                <br />
-
-                <input 
-                  class="checkbox-input" 
-                  type="checkbox" 
-                  id="checkbox2" 
+                <input
+                  class="c-modal__checkbox"
+                  type="checkbox"
+                  id="checkbox2"
                 />
-                <label class="checkbox2-label" for="checkbox2">
+                <label class="c-modal__checkbox-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
                 </label>
-
-                <br />
               </div>
 
               <input
-                class="button btn-submit"
+                class="c-btn c-btn--cta"
                 type="submit"
                 value="C'est parti"
               />
@@ -265,9 +262,7 @@
     </main>
 
     <footer>
-      <p class="copyrights">
-        Copyright 2014 - 2020, GameOn Inc.
-      </p>
+      <p class="l-footer__copyrights">Copyright 2014 - 2020, GameOn Inc.</p>
     </footer>
 
     <script src="js/modal.js"></script>

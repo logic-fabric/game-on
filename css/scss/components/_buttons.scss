@@ -1,0 +1,26 @@
+.c-btn {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 0;
+  border-radius: 1rem;
+
+  color: white;
+  font-size: $txt-size;
+
+  background: $primary-500;
+
+  cursor: pointer;
+
+  &:hover {
+    background: $secondary-500;
+  }
+
+  // call-to-action button:
+  &--cta {
+    display: block;
+
+    margin: 0.5rem auto;
+    padding: 1rem 5rem;
+    border-radius: 0.5rem;
+  }
+}

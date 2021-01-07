@@ -1,0 +1,27 @@
+footer {
+  margin: 0 1.5rem;
+  padding: 0.5rem 2vw;
+
+  font-family: $font-slab;
+
+  .l-footer__copyrights {
+    margin: 4rem 0 2rem;
+    padding: 0;
+
+    color: $primary-500;
+    font-size: $sm-size;
+    font-weight: 500;
+  }
+}
+
+/* =============
+   MEDIA QUERIES
+   ============= */
+
+@media screen and (max-width: $medium-breakpoint) {
+  footer .l-footer__copyrights {
+    margin-top: 3rem;
+
+    text-align: center;
+  }
+}

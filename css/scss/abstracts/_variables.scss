@@ -1,0 +1,48 @@
+/* =====
+   FONTS
+   ===== */
+
+$primary-500: #fe142f;
+
+$secondary-500: #3876ac;
+
+$modal-background: rgba(26, 39, 156, 0.4);
+
+$success-500: #279e7a;
+
+$danger-500: #e54858;
+
+$neutral-200: #c4c4c4;
+$neutral-800: #232323;
+$neutral-900: black;
+
+/* =====
+   FONTS
+   ===== */
+
+$font-default: "DM Sans", Arial, Helvetica, sans-serif;
+$font-slab: $font-default;
+$font-nav: Roboto, sans-serif;
+
+/* =======================
+   TEXT AND HEADINGS SIZES
+   ======================= */
+
+$txt-size: 1.125rem;
+
+$xs-size: 0.8 * $txt-size;
+$sm-size: 0.9 * $txt-size;
+
+$h6-size: 1.1 * $txt-size;
+$h5-size: 1.1 * $h6-size;
+$h4-size: 1.1 * $h5-size;
+$h3-size: 1.1 * $h4-size;
+$h2-size: 1.1 * $h3-size;
+$h1-size: 1.1 * $h2-size;
+
+/* ===========
+   BREAKPOINTS
+   =========== */
+
+$small-breakpoint: 540px;
+$medium-breakpoint: 768px;
