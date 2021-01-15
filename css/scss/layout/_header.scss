@@ -27,7 +27,7 @@ header {
     text-align: center;
     text-decoration: none;
 
-    &.active,
+    &:active,
     &:hover {
       border-radius: 1rem;
 
@@ -37,7 +37,7 @@ header {
     }
   }
 
-  .icon {
+  #menu-icon {
     display: none;
   }
 }
@@ -52,7 +52,7 @@ header {
       display: none;
     }
 
-    .icon {
+    #menu-icon {
       display: block;
       float: right;
     }
@@ -71,7 +71,7 @@ header {
         flex-direction: column;
       }
 
-      .icon {
+      #menu-icon {
         position: absolute;
         top: 0;
         right: 0;
@@ -86,7 +86,7 @@ header {
       display: none;
     }
 
-    .icon {
+    #menu-icon {
       display: block;
       float: right;
 

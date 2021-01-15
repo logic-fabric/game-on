@@ -448,12 +448,12 @@ header a {
   text-align: center;
   text-decoration: none;
 }
-header a.active, header a:hover {
+header a:active, header a:hover {
   border-radius: 1rem;
   color: white;
   background: #fe142f;
 }
-header .icon {
+header #menu-icon {
   display: none;
 }
 
@@ -464,7 +464,7 @@ header .icon {
   header a {
     display: none;
   }
-  header .icon {
+  header #menu-icon {
     display: block;
     float: right;
   }
@@ -479,7 +479,7 @@ header .icon {
   header.responsive ul {
     flex-direction: column;
   }
-  header.responsive .icon {
+  header.responsive #menu-icon {
     position: absolute;
     top: 0;
     right: 0;
@@ -489,7 +489,7 @@ header .icon {
   header a {
     display: none;
   }
-  header .icon {
+  header #menu-icon {
     display: block;
     float: right;
     margin-top: -1rem;
@@ -525,7 +525,7 @@ header .icon {
     opacity: 1;
   }
 }
-.c-modal__background {
+#modal__background {
   display: none;
   position: fixed;
   top: 0;
