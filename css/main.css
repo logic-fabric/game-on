@@ -618,17 +618,17 @@ header #menu-icon {
   border-radius: 0.5rem;
   font-size: 1.2375rem;
 }
-.c-modal__body .c-modal__radio-label,
-.c-modal__body .c-modal__checkbox-label {
+.c-modal__body .c-modal__checkbox-label,
+.c-modal__body .c-modal__round-checkbox-label {
   position: relative;
   margin-left: 2.25rem;
   font-size: 0.9rem;
   font-weight: 400;
 }
-.c-modal__body .c-modal__radio-label .radio-icon,
-.c-modal__body .c-modal__radio-label .checkbox-icon,
-.c-modal__body .c-modal__checkbox-label .radio-icon,
-.c-modal__body .c-modal__checkbox-label .checkbox-icon {
+.c-modal__body .c-modal__checkbox-label .checkbox-icon,
+.c-modal__body .c-modal__checkbox-label .round-checkbox-icon,
+.c-modal__body .c-modal__round-checkbox-label .checkbox-icon,
+.c-modal__body .c-modal__round-checkbox-label .round-checkbox-icon {
   display: block;
   position: absolute;
   top: -1px;
@@ -641,10 +641,10 @@ header #menu-icon {
   white-space: nowrap;
   transition: 300ms;
 }
-.c-modal__body .c-modal__radio-label .radio-icon::after,
-.c-modal__body .c-modal__radio-label .checkbox-icon::after,
-.c-modal__body .c-modal__checkbox-label .radio-icon::after,
-.c-modal__body .c-modal__checkbox-label .checkbox-icon::after {
+.c-modal__body .c-modal__checkbox-label .checkbox-icon::after,
+.c-modal__body .c-modal__checkbox-label .round-checkbox-icon::after,
+.c-modal__body .c-modal__round-checkbox-label .checkbox-icon::after,
+.c-modal__body .c-modal__round-checkbox-label .round-checkbox-icon::after {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -659,14 +659,14 @@ header #menu-icon {
   transform: translate(-50%, -50%);
   transition: 300ms;
 }
-.c-modal__body .c-modal__radio-label .checkbox-icon,
-.c-modal__body .c-modal__checkbox-label .checkbox-icon {
+.c-modal__body .c-modal__checkbox-label .checkbox-icon,
+.c-modal__body .c-modal__round-checkbox-label .checkbox-icon {
   border: 0;
   border-radius: 0.25rem;
   background: #c4c4c4;
 }
-.c-modal__body .c-modal__radio-label .checkbox-icon::after,
-.c-modal__body .c-modal__checkbox-label .checkbox-icon::after {
+.c-modal__body .c-modal__checkbox-label .checkbox-icon::after,
+.c-modal__body .c-modal__round-checkbox-label .checkbox-icon::after {
   top: 20%;
   left: 20%;
   width: 0.75rem;
@@ -678,13 +678,13 @@ header #menu-icon {
   background: transparent;
   transform: rotate(-55deg);
 }
-.c-modal__body .c-modal__radio-btn,
-.c-modal__body .c-modal__checkbox {
+.c-modal__body .c-modal__checkbox,
+.c-modal__body .c-modal__round-checkbox {
   display: none;
 }
-.c-modal__body .c-modal__radio-btn:checked + .c-modal__radio-label .radio-icon::after, .c-modal__body .c-modal__radio-btn:checked + .c-modal__checkbox-label .checkbox-icon::after,
-.c-modal__body .c-modal__checkbox:checked + .c-modal__radio-label .radio-icon::after,
-.c-modal__body .c-modal__checkbox:checked + .c-modal__checkbox-label .checkbox-icon::after {
+.c-modal__body .c-modal__checkbox:checked + .c-modal__checkbox-label .checkbox-icon::after, .c-modal__body .c-modal__checkbox:checked + .c-modal__round-checkbox-label .round-checkbox-icon::after,
+.c-modal__body .c-modal__round-checkbox:checked + .c-modal__checkbox-label .checkbox-icon::after,
+.c-modal__body .c-modal__round-checkbox:checked + .c-modal__round-checkbox-label .round-checkbox-icon::after {
   opacity: 1;
 }
 .c-modal__body .c-modal__checkbox:checked + .c-modal__checkbox-label .checkbox-icon {

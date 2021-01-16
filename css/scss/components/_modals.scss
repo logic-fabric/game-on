@@ -137,16 +137,16 @@ $modal-open-duration: 0.8s;
     font-size: $h6-size;
   }
 
-  .c-modal__radio-label,
-  .c-modal__checkbox-label {
+  .c-modal__checkbox-label,
+  .c-modal__round-checkbox-label {
     position: relative;
 
     margin-left: 2.25rem;
     font-size: $xs-size;
     font-weight: 400;
 
-    .radio-icon,
-    .checkbox-icon {
+    .checkbox-icon,
+    .round-checkbox-icon {
       display: block;
       position: absolute;
       top: -1px;
@@ -207,12 +207,12 @@ $modal-open-duration: 0.8s;
     }
   }
 
-  .c-modal__radio-btn,
-  .c-modal__checkbox {
+  .c-modal__checkbox,
+  .c-modal__round-checkbox {
     display: none;
 
-    &:checked + .c-modal__radio-label .radio-icon::after,
-    &:checked + .c-modal__checkbox-label .checkbox-icon::after {
+    &:checked + .c-modal__checkbox-label .checkbox-icon::after,
+    &:checked + .c-modal__round-checkbox-label .round-checkbox-icon::after {
       opacity: 1;
     }
   }

@@ -72,8 +72,7 @@
           </h1>
 
           <p class="p-hero-banner__text">
-            Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux
-            réservations... Places limitées !
+            Vous aimez jouer&nbsp;? Notre prochain évènement gaming est ouvert aux réservations... Places limitées&nbsp;!
           </p>
 
           <button class="c-btn c-btn--cta">Je m'inscris</button>
@@ -96,29 +95,29 @@
 
           <div class="c-modal__body">
             <form
-              name="reserve"
+              name="sign-in"
               action="index.html"
               method="get"
               onsubmit="return validate();"
             >
               <div class="c-modal__form-item">
-                <label for="first">Prénom</label>
+                <label for="first-name">Prénom</label>
                 <input
                   class="c-modal__text-input"
                   type="text"
-                  id="first"
-                  name="first"
+                  id="first-name"
+                  name="first-name"
                   minlength="2"
                 />
               </div>
 
               <div class="c-modal__form-item">
-                <label for="last">Nom</label>
+                <label for="last-name">Nom</label>
                 <input
                   class="c-modal__text-input"
                   type="text"
-                  id="last"
-                  name="last"
+                  id="last-name"
+                  name="last-name"
                 />
               </div>
 
@@ -143,105 +142,105 @@
               </div>
 
               <div class="c-modal__form-item">
-                <label for="quantity">
-                  À combien de tournois GameOn avez-vous déjà participé ?
+                <label for="previous-participations-quantity">
+                  À combien de tournois GameOn avez-vous déjà participé&nbsp;?
                 </label>
                 <input
                   type="number"
                   class="c-modal__text-input"
-                  id="quantity"
-                  name="quantity"
+                  id="previous-participations-quantity"
+                  name="previous-participations-quantity"
                   min="0"
                   max="99"
                 />
               </div>
 
-              <label class="c-modal__text-label">Quelles villes ?</label>
+              <label class="c-modal__text-label">Quelles villes&nbsp;?</label>
 
               <div class="c-modal__form-item">
-                <!-- Radio buttons: -->
+                <!-- Towns checboxes: -->
                 <input
-                  class="c-modal__radio-btn"
-                  type="radio"
-                  id="location1"
+                  class="c-modal__round-checkbox"
+                  type="checkbox"
+                  id="location-1"
                   name="location"
                   value="New York"
                 />
-                <label class="c-modal__radio-label" for="location1">
-                  <span class="radio-icon"></span>
+                <label class="c-modal__round-checkbox-label" for="location-1">
+                  <span class="round-checkbox-icon"></span>
                   New York
                 </label>
 
                 <input
-                  class="c-modal__radio-btn"
-                  type="radio"
-                  id="location2"
+                  class="c-modal__round-checkbox"
+                  type="checkbox"
+                  id="location-2"
                   name="location"
                   value="San Francisco"
                 />
-                <label class="c-modal__radio-label" for="location2">
-                  <span class="radio-icon"></span>
+                <label class="c-modal__round-checkbox-label" for="location-2">
+                  <span class="round-checkbox-icon"></span>
                   San Francisco
                 </label>
 
                 <input
-                  class="c-modal__radio-btn"
-                  type="radio"
-                  id="location3"
+                  class="c-modal__round-checkbox"
+                  type="checkbox"
+                  id="location-3"
                   name="location"
                   value="Seattle"
                 />
-                <label class="c-modal__radio-label" for="location3">
-                  <span class="radio-icon"></span>
+                <label class="c-modal__round-checkbox-label" for="location-3">
+                  <span class="round-checkbox-icon"></span>
                   Seattle
                 </label>
 
                 <input
-                  class="c-modal__radio-btn"
-                  type="radio"
-                  id="location4"
+                  class="c-modal__round-checkbox"
+                  type="checkbox"
+                  id="location-4"
                   name="location"
                   value="Chicago"
                 />
-                <label class="c-modal__radio-label" for="location4">
-                  <span class="radio-icon"></span>
+                <label class="c-modal__round-checkbox-label" for="location-4">
+                  <span class="round-checkbox-icon"></span>
                   Chicago
                 </label>
                 <input
-                  class="c-modal__radio-btn"
-                  type="radio"
-                  id="location5"
+                  class="c-modal__round-checkbox"
+                  type="checkbox"
+                  id="location-5"
                   name="location"
                   value="Boston"
                 />
-                <label class="c-modal__radio-label" for="location5">
-                  <span class="radio-icon"></span>
+                <label class="c-modal__round-checkbox-label" for="location-5">
+                  <span class="round-checkbox-icon"></span>
                   Boston
                 </label>
 
                 <input
-                  class="c-modal__radio-btn"
-                  type="radio"
-                  id="location6"
+                  class="c-modal__round-checkbox"
+                  type="checkbox"
+                  id="location-6"
                   name="location"
                   value="Portland"
                 />
-                <label class="c-modal__radio-label" for="location6">
-                  <span class="radio-icon"></span>
+                <label class="c-modal__round-checkbox-label" for="location-6">
+                  <span class="round-checkbox-icon"></span>
                   Portland
                 </label>
               </div>
 
-              <!-- Checkboxes: -->
+              <!-- Agreement checkboxes: -->
               <div class="c-modal__form-item">
                 <input
                   class="c-modal__checkbox"
                   type="checkbox"
-                  id="checkbox1"
+                  id="general-conditions"
                   required
                   checked
                 />
-                <label class="c-modal__checkbox-label" for="checkbox1">
+                <label class="c-modal__checkbox-label" for="general-conditions">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
@@ -249,9 +248,9 @@
                 <input
                   class="c-modal__checkbox"
                   type="checkbox"
-                  id="checkbox2"
+                  id="newsletter-opt-in"
                 />
-                <label class="c-modal__checkbox-label" for="checkbox2">
+                <label class="c-modal__checkbox-label" for="newsletter-opt-in">
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
                 </label>
