@@ -525,7 +525,7 @@ header #menu-icon {
     opacity: 1;
   }
 }
-#modal__background {
+#modal {
   display: none;
   position: fixed;
   top: 0;
@@ -549,7 +549,7 @@ header #menu-icon {
   animation: modal-open 0.8s;
   background: #232323;
 }
-.c-modal__window .close-icon {
+.c-modal__window #close-icon {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -559,7 +559,7 @@ header #menu-icon {
   transform: scale(0.7);
   cursor: pointer;
 }
-.c-modal__window .close-icon::before, .c-modal__window .close-icon::after {
+.c-modal__window #close-icon::before, .c-modal__window #close-icon::after {
   position: absolute;
   left: 1rem;
   width: 0.25rem;
@@ -567,10 +567,10 @@ header #menu-icon {
   content: " ";
   background: white;
 }
-.c-modal__window .close-icon::before {
+.c-modal__window #close-icon::before {
   transform: rotate(45deg);
 }
-.c-modal__window .close-icon::after {
+.c-modal__window #close-icon::after {
   transform: rotate(-45deg);
 }
 

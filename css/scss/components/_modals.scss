@@ -11,7 +11,7 @@ $modal-open-duration: 0.8s;
   }
 }
 
-#modal__background {
+#modal {
   display: none;
   position: fixed;
   top: 0;
@@ -41,7 +41,7 @@ $modal-open-duration: 0.8s;
 
   background: $neutral-800;
 
-  .close-icon {
+  #close-icon {
     position: absolute;
     top: 1rem;
     right: 1rem;
