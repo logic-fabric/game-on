@@ -378,6 +378,10 @@ body {
   font-size: 1.125rem;
 }
 
+abbr[title] {
+  text-decoration: none;
+}
+
 img {
   padding-right: 1rem;
 }

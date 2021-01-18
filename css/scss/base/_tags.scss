@@ -23,6 +23,10 @@ body {
   font-size: $txt-size;
 }
 
+abbr[title] {
+  text-decoration: none;
+}
+
 img {
   padding-right: 1rem;
 }

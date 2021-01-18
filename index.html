@@ -72,10 +72,11 @@
           </h1>
 
           <p class="p-hero-banner__text">
-            Vous aimez jouer&nbsp;? Notre prochain évènement gaming est ouvert aux réservations... Places limitées&nbsp;!
+            Vous aimez jouer&nbsp;? Notre prochain évènement gaming est ouvert
+            aux réservations... Places limitées&nbsp;!
           </p>
 
-          <button class="c-btn c-btn--cta">Je m'inscris</button>
+          <button class="c-btn c-btn--cta" type="button">Je m'inscris</button>
         </section>
 
         <div class="p-hero-banner__img">
@@ -85,7 +86,7 @@
           />
         </div>
 
-        <button class="c-btn c-btn--cta">Je m'inscris</button>
+        <button class="c-btn c-btn--cta" type="button">Je m'inscris</button>
       </div>
 
       <!-- MODAL FORM -->
@@ -101,33 +102,42 @@
               onsubmit="return validate();"
             >
               <div class="c-modal__form-item">
-                <label for="first-name">Prénom</label>
+                <label for="first-name">
+                  Prénom<abbr title="champ requis"> * </abbr>
+                </label>
                 <input
                   class="c-modal__text-input"
                   type="text"
                   id="first-name"
                   name="first-name"
                   minlength="2"
+                  required
                 />
               </div>
 
               <div class="c-modal__form-item">
-                <label for="last-name">Nom</label>
+                <label for="last-name">
+                  Nom<abbr title="champ requis"> * </abbr>
+                </label>
                 <input
                   class="c-modal__text-input"
                   type="text"
                   id="last-name"
                   name="last-name"
+                  required
                 />
               </div>
 
               <div class="c-modal__form-item">
-                <label for="email">E-mail</label>
+                <label for="email">
+                  E-mail<abbr title="champ requis"> * </abbr>
+                </label>
                 <input
                   class="c-modal__text-input"
                   type="email"
                   id="email"
                   name="email"
+                  required
                 />
               </div>
 
@@ -144,6 +154,7 @@
               <div class="c-modal__form-item">
                 <label for="previous-participations-quantity">
                   À combien de tournois GameOn avez-vous déjà participé&nbsp;?
+                  <abbr title="champ requis"> * </abbr>
                 </label>
                 <input
                   type="number"
@@ -152,6 +163,7 @@
                   name="previous-participations-quantity"
                   min="0"
                   max="99"
+                  required
                 />
               </div>
 
@@ -243,6 +255,7 @@
                 <label class="c-modal__checkbox-label" for="general-conditions">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
+                  <abbr title="champ requis"> * </abbr>
                 </label>
 
                 <input
@@ -256,11 +269,13 @@
                 </label>
               </div>
 
-              <input
+              <button
                 class="c-btn c-btn--cta"
                 type="submit"
                 value="C'est parti"
-              />
+              >
+                C'est parti
+              </button>
             </form>
           </div>
         </div>
