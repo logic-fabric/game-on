@@ -13,12 +13,12 @@ menuIcon.addEventListener("click", toggleNav);
    MODAL 
    ===== */
 
-// Open modal:
+// OPEN MODAL:
 const callToActionButtons = document.querySelectorAll(".c-btn--cta");
 
 callToActionButtons.forEach((btn) => btn.addEventListener("click", openhModal));
 
-// Clode modal:
+// CLOSE MODAL:
 const closeIcon = document.getElementById("close-icon");
 
 closeIcon.addEventListener("click", closeModal);

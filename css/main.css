@@ -528,7 +528,7 @@ header #menu-icon {
     opacity: 1;
   }
 }
-#modal {
+#modal-bg {
   display: none;
   position: fixed;
   top: 0;
