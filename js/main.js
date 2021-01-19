@@ -1,13 +1,5 @@
-import { toggleNav } from "./components/nav.js";
+import {} from "./components/nav.js";
 import { closeModal, openhModal } from "./components/modal.js";
-
-/* ==============
-   HAMBURGER MENU
-   ============== */
-
-const menuIcon = document.getElementById("menu-icon");
-
-menuIcon.addEventListener("click", toggleNav);
 
 /* =====
    MODAL 
