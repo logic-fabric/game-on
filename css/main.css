@@ -598,12 +598,18 @@ header #menu-icon {
 .c-modal__body .c-modal__form-item[data-error-visible=true] .c-modal__text-input {
   border: 0.125rem solid #e54858;
 }
+.c-modal__body fieldset {
+  margin: 1rem 0 0 0;
+  padding: 0;
+  border: none;
+}
 .c-modal__body ul.c-modal__form-item {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 0.5rem;
 }
-.c-modal__body label {
+.c-modal__body label,
+.c-modal__body legend {
   display: inline-block;
   margin: 0.5rem 0;
   font-size: 1.0125rem;

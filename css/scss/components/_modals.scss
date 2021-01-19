@@ -107,6 +107,12 @@ $modal-open-duration: 0.8s;
     }
   }
 
+  fieldset {
+    margin: 1rem 0 0 0;
+    padding: 0;
+    border: none;
+  }
+
   ul.c-modal__form-item {
     display: flex;
     flex-wrap: wrap;
@@ -114,7 +120,8 @@ $modal-open-duration: 0.8s;
     margin-bottom: 0.5rem;
   }
 
-  label {
+  label,
+  legend {
     display: inline-block;
 
     margin: 0.5rem 0;
