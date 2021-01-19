@@ -1,4 +1,4 @@
-# GameOn - Jan 2020
+# GameOn - Jan 2021
 
 Code source du __Projet 4__ - ___Créez une landing page avec JavaScript___ du parcours __Développeur Front-end__ d'_OpenClassrooms_.
 

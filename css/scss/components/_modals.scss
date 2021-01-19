@@ -107,6 +107,13 @@ $modal-open-duration: 0.8s;
     }
   }
 
+  ul.c-modal__form-item {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-bottom: 0.5rem;
+  }
+
   label {
     display: inline-block;
 
@@ -154,7 +161,7 @@ $modal-open-duration: 0.8s;
 
       width: 1.25rem;
       height: 1.25rem;
-      border: 0.125rem solid $success-500;
+      border: 0.125rem solid $neutral-200;
       border-radius: 50%;
 
       text-indent: 2rem;
@@ -210,6 +217,10 @@ $modal-open-duration: 0.8s;
   .c-modal__checkbox,
   .c-modal__round-checkbox {
     display: none;
+
+    &:checked + .c-modal__round-checkbox-label .round-checkbox-icon {
+      border-color: $success-500;
+    }
 
     &:checked + .c-modal__checkbox-label .checkbox-icon::after,
     &:checked + .c-modal__round-checkbox-label .round-checkbox-icon::after {
