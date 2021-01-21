@@ -43,291 +43,69 @@
   </head>
 
   <body>
-    <header id="header-nav">
+    <header>
       <div class="l-header__logo">
         <img src="img/logo-gameon.png" alt="Logo de GameOn" />
       </div>
 
-      <nav class="l-header__navbar">
+      <nav>
         <ul>
           <li>
-            <a href="#" class="active"><span>Accueil</span></a>
+            <a href="#">Détails de l'événement</a>
           </li>
           <li>
-            <a href="#"><span>Détails de l'évènement</span></a>
+            <a href="#">&Agrave; propos</a>
           </li>
           <li>
-            <a href="#"><span>À propos</span></a>
+            <a href="#">Contact</a>
           </li>
           <li>
-            <a href="#"><span>Contact</span></a>
-          </li>
-          <li>
-            <a href="#"><span>Évènements passés</span></a>
-          </li>
-          <li>
-            <a href="javascript:void(0)" id="menu-icon">
-              <i class="fa fa-bars"></i>
-            </a>
+            <a href="#">&Eacute;vénements passés</a>
           </li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <div class="p-hero-banner">
-        <section class="p-hero-banner__content">
-          <h1 class="p-hero-banner__headline">
-            Marathon national<br />
-            de jeux vidéos
-          </h1>
+      <section>
+        <h1>Marathon national de jeux vidéos</h1>
 
-          <p class="p-hero-banner__text">
-            Vous aimez jouer&nbsp;? Notre prochain évènement gaming est ouvert
-            aux réservations... Places limitées&nbsp;!
-          </p>
+        <p>
+          Vous aimez jouer&nbsp;? Notre prochain événement gaming est ouvert aux
+          réservations... Places limitées&nbsp;!
+        </p>
 
-          <button class="c-btn c-btn--cta" type="button">Je m'inscris</button>
-        </section>
+        <img
+          src="img/gameuse.jpg"
+          alt="Une gameuse victorieuse devant son écran"
+        />
+      </section>
 
-        <div class="p-hero-banner__img">
-          <img
-            src="img/gameuse.jpg"
-            alt="Une gameuse victorieuse, devant son écran"
-          />
-        </div>
-
-        <button class="c-btn c-btn--cta" type="button">Je m'inscris</button>
-      </div>
-
-      <!-- MODAL FORM -->
-      <div id="modal-bg">
-        <div class="c-modal__window" id="modal-window">
-          <span id="close-icon"></span>
-
-          <div class="c-modal__body">
-            <form
-              name="sign-in"
-              action="index.html"
-              method="get"
-              onsubmit="return validate();"
-            >
-              <div class="c-modal__form-item">
-                <label for="first-name">
-                  Prénom<abbr title="Ce champ doit être rempli"> * </abbr>
-                </label>
-                <input
-                  class="c-modal__text-input"
-                  type="text"
-                  id="first-name"
-                  name="first-name"
-                  minlength="2"
-                  required
-                />
-              </div>
-
-              <div class="c-modal__form-item">
-                <label for="last-name">
-                  Nom<abbr title="Ce champ doit être rempli"> * </abbr>
-                </label>
-                <input
-                  class="c-modal__text-input"
-                  type="text"
-                  id="last-name"
-                  name="last-name"
-                  required
-                />
-              </div>
-
-              <div class="c-modal__form-item">
-                <label for="email">
-                  E-mail<abbr title="Ce champ doit être rempli"> * </abbr>
-                </label>
-                <input
-                  class="c-modal__text-input"
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                />
-              </div>
-
-              <div class="c-modal__form-item">
-                <label for="birthdate">Date de naissance</label>
-                <input
-                  class="c-modal__text-input"
-                  type="date"
-                  id="birthdate"
-                  name="birthdate"
-                />
-              </div>
-
-              <div class="c-modal__form-item">
-                <label for="previous-participations-quantity">
-                  À combien de tournois GameOn avez-vous déjà participé&nbsp;?
-                  <abbr title="Ce champ doit être rempli"> * </abbr>
-                </label>
-                <input
-                  type="number"
-                  class="c-modal__text-input"
-                  id="previous-participations-quantity"
-                  name="previous-participations-quantity"
-                  min="0"
-                  max="99"
-                  required
-                />
-              </div>
-
-              <!-- Towns checboxes: -->
-              <fieldset>
-                <legend class="c-modal__text-label">
-                  Quelles villes&nbsp;?
-                </legend>
-
-                <ul class="c-modal__form-item">
-                  <li>
-                    <input
-                      class="c-modal__round-checkbox"
-                      type="checkbox"
-                      id="location-1"
-                      name="location"
-                      value="New York"
-                    />
-                    <label
-                      class="c-modal__round-checkbox-label"
-                      for="location-1"
-                    >
-                      <span class="round-checkbox-icon"></span>
-                      New York
-                    </label>
-                  </li>
-
-                  <li>
-                    <input
-                      class="c-modal__round-checkbox"
-                      type="checkbox"
-                      id="location-2"
-                      name="location"
-                      value="San Francisco"
-                    />
-                    <label
-                      class="c-modal__round-checkbox-label"
-                      for="location-2"
-                    >
-                      <span class="round-checkbox-icon"></span>
-                      San Francisco
-                    </label>
-                  </li>
-
-                  <li>
-                    <input
-                      class="c-modal__round-checkbox"
-                      type="checkbox"
-                      id="location-3"
-                      name="location"
-                      value="Seattle"
-                    />
-                    <label
-                      class="c-modal__round-checkbox-label"
-                      for="location-3"
-                    >
-                      <span class="round-checkbox-icon"></span>
-                      Seattle
-                    </label>
-                  </li>
-
-                  <li>
-                    <input
-                      class="c-modal__round-checkbox"
-                      type="checkbox"
-                      id="location-4"
-                      name="location"
-                      value="Chicago"
-                    />
-                    <label
-                      class="c-modal__round-checkbox-label"
-                      for="location-4"
-                    >
-                      <span class="round-checkbox-icon"></span>
-                      Chicago
-                    </label>
-                  </li>
-
-                  <li>
-                    <input
-                      class="c-modal__round-checkbox"
-                      type="checkbox"
-                      id="location-5"
-                      name="location"
-                      value="Boston"
-                    />
-                    <label
-                      class="c-modal__round-checkbox-label"
-                      for="location-5"
-                    >
-                      <span class="round-checkbox-icon"></span>
-                      Boston
-                    </label>
-                  </li>
-
-                  <li>
-                    <input
-                      class="c-modal__round-checkbox"
-                      type="checkbox"
-                      id="location-6"
-                      name="location"
-                      value="Portland"
-                    />
-                    <label
-                      class="c-modal__round-checkbox-label"
-                      for="location-6"
-                    >
-                      <span class="round-checkbox-icon"></span>
-                      Portland
-                    </label>
-                  </li>
-                </ul>
-              </fieldset>
-
-              <!-- Agreement checkboxes: -->
-              <div class="c-modal__form-item">
-                <input
-                  class="c-modal__checkbox"
-                  type="checkbox"
-                  id="general-conditions"
-                />
-                <label class="c-modal__checkbox-label" for="general-conditions">
-                  <span class="checkbox-icon"></span>
-                  J'ai lu et j'accepte les conditions d'utilisation.
-                  <abbr title="Cette case doit être cochée"> * </abbr>
-                </label>
-
-                <input
-                  class="c-modal__checkbox"
-                  type="checkbox"
-                  id="newsletter-opt-in"
-                />
-                <label class="c-modal__checkbox-label" for="newsletter-opt-in">
-                  <span class="checkbox-icon"></span>
-                  Je souhaite être prévenu des prochains évènements.
-                </label>
-              </div>
-
-              <button
-                class="c-btn c-btn--cta"
-                type="submit"
-                value="C'est parti"
-              >
-                C'est parti
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
+      <button type="button">Je m'inscris</button>
     </main>
 
     <footer>
-      <p class="l-footer__copyrights">Copyright 2014 - 2020, GameOn Inc.</p>
+      <p>Copyright 2014 - 2021, GameOn Inc.</p>
     </footer>
+
+    <aside id="modal">
+      <form action="">
+        <fieldset></fieldset>
+
+        <fieldset>
+          <legend>Dans quelle ville souhaitez-vous vous inscrire&nbsp;?</legend>
+        </fieldset>
+
+        <fieldset></fieldset>
+
+        <button type="submit">C'est parti</button>
+      </form>
+
+      <div>
+        <p>Nous vous remerçions pour cette inscription</p>
+
+        <button type="button">Fermer</button>
+      </div>
+    </aside>
   </body>
 </html>

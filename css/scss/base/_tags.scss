@@ -1,7 +1,14 @@
+/* =======================
+   RAW TAGS DEFAULT STYLES
+   ======================= */
+
 html {
   box-sizing: border-box;
 
   color: $neutral-900;
+  font-family: $font-primary;
+  font-size: $txt-size;
+  font-weight: 300;
 
   scroll-behavior: smooth;
 }
@@ -13,36 +20,56 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-
-  max-width: 1300px;
-  margin: 0 auto;
-
-  font-family: $font-default;
-  font-size: $txt-size;
+  @include large-wrapping;
+  padding: 0 2.5rem;
 }
 
-abbr[title] {
+a {
+  color: $neutral-900;
   text-decoration: none;
+
+  &:hover {
+    color: $neutral-900;
+  }
 }
 
-img {
-  padding-right: 1rem;
+fieldset {
+  padding: 0;
+  border: none;
 }
 
-main {
-  margin: 0.25rem 1.25rem 1rem;
-  padding: 0.5vw 2vw 0 2vw;
-  border-radius: 2rem;
-
-  font-size: $h4-size;
-  font-weight: 700;
-}
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p {
-  margin-bottom: 0;
-  padding: 0.5vw;
+  margin: 0.5rem 0;
+}
+
+h1 {
+  font-size: $h1-size;
+}
+
+h2 {
+  font-size: $h2-size;
+}
+
+h3 {
+  font-size: $h3-size;
+}
+
+h4 {
+  font-size: $h4-size;
+}
+
+h5 {
+  font-size: $h5-size;
+}
+
+h6 {
+  font-size: $h6-size;
 }
 
 ul {
