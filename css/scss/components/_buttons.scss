@@ -1,0 +1,17 @@
+.c-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+
+  font-size: $h5-size;
+}
+
+.c-btn--cta {
+  color: white;
+
+  background: $primary-500;
+
+  &:hover {
+    background: $secondary-500;
+  }
+}

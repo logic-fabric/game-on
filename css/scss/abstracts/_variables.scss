@@ -39,12 +39,27 @@ $h3-size: 1.1 * $h4-size; // 26.4px
 $h2-size: 1.1 * $h3-size; // 29px
 $h1-size: 1.1 * $h2-size; // 31.8px
 
+// =========
+// Z-INDEXES
+// =========
+
+$z-ground: 0;
+$z-on-front: 1000;
+$z-dropdown: 2000;
+$z-nav-secondary: 3000;
+$z-header-footer: 4000;
+$z-nav-primary: 5000;
+$z-fullscreen-functionality: 6000;
+$z-special-case: 7000;
+$z-modal: 8000;
+$z-notification: 9000;
+
 // ===========
 // BREAKPOINTS
 // ===========
 
-$small-breakpoint: 1440px;
-$medium-breakpoint: 1440px;
+$small-breakpoint: 800px;
+$medium-breakpoint: 1024px;
 $large-breakpoint: 1440px;
 
 $large-container-width: 1440px;

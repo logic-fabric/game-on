@@ -1,3 +1,47 @@
 main {
   padding: 0 5rem;
+  position: relative;
+
+  .l-hero {
+    position: relative;
+
+    height: 40rem;
+    border-radius: 0.5rem;
+    @include medium-box-shadow;
+    overflow: hidden;
+
+    background: $neutral-800;
+
+    &__heading,
+    &__text,
+    &__img {
+      position: absolute;
+    }
+
+    &__heading {
+      top: 4rem;
+
+      padding: 0 5rem;
+      z-index: $z-on-front;
+
+      color: white;
+      font-size: 5.5rem;
+      font-weight: 500;
+    }
+
+    &__text {
+      top: 23rem;
+      padding: 0 2rem 0 5rem;
+
+      color: white;
+      font-size: $h5-size;
+      line-height: 1.5;
+    }
+
+    &__img {
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
 }
