@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 5rem;
+
+  nav {
+    display: flex;
+  }
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    margin: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+
+    font-size: $h5-size;
+
+    &:hover {
+      background: $primary-500;
+
+      a {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  #hamburger-icon {
+    display: none;
+  }
+}
