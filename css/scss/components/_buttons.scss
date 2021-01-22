@@ -4,12 +4,16 @@
   border-radius: 0.5rem;
 
   font-size: $h5-size;
+
+  cursor: pointer;
 }
 
 .c-btn--cta {
   color: white;
 
   background: $primary-500;
+
+  transition: background-color 200ms;
 
   &:hover {
     background: $secondary-500;

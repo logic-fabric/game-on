@@ -1,5 +1,9 @@
 footer {
   z-index: $z-header-footer;
   
-  padding: 5rem 0;
+  padding: 5rem 0 3rem 0;
+
+  color: $primary-500;
+  font-family: $font-secondary;
+  font-weight: 500;
 }
