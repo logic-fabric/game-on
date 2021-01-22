@@ -6,6 +6,10 @@ header {
 
   padding: 3rem 5rem 4rem 5rem;
 
+  img {
+    height: 3rem;
+  }
+
   nav {
     display: flex;
   }
@@ -30,8 +34,47 @@ header {
       }
     }
   }
+}
+
+#hamburger-icon {
+  display: none;
+}
+
+@media (max-width: $medium-breakpoint - 1) {
+  header {
+    padding: 2rem 0 3rem 0;
+
+    img {
+      height: 2.5rem;
+    }
+
+    li {
+      margin: 0.25rem 0;
+
+      font-size: txt-size;
+    }
+  }
+}
+
+@media (max-width: $small-breakpoint - 1) {
+  header {
+    padding: 1.5rem 0 1rem 0;
+
+    img {
+      padding-top: 0.5rem;
+      height: 1.5rem;
+    }
+
+    ul {
+      display: none;
+    }
+  }
 
   #hamburger-icon {
-    display: none;
+    display: inline-block;
+
+    padding: 0.5rem;
+
+    color: $primary-500;
   }
 }

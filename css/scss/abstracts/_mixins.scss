@@ -8,10 +8,20 @@
   margin: 0 auto;
 }
 
+@mixin small-wrapping {
+  max-width: $small-container-width;
+  margin: 0 auto;
+}
+
 // =================
 // BOX-SHADOW MIXINS
 // =================
 @mixin medium-box-shadow {
   -webkit-box-shadow: 0 0.75rem 0.55rem rgba(0, 0, 0, 0.25);
   box-shadow: 0 0.75rem 0.55rem rgba(0, 0, 0, 0.25);
+}
+
+@mixin no-box-shadow {
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }

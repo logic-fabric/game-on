@@ -22,6 +22,11 @@ html {
 body {
   @include large-wrapping;
   padding: 0 2.5rem;
+
+  @media (max-width: $small-breakpoint - 1) {
+    @include small-wrapping;
+    padding: 0 1.5rem;
+  }
 }
 
 a {

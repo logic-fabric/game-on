@@ -44,7 +44,7 @@ $h1-size: 1.1 * $h2-size; // 31.8px
 // =========
 
 $z-ground: 0;
-$z-on-front: 1000;
+$z-in-front: 1000;
 $z-dropdown: 2000;
 $z-nav-secondary: 3000;
 $z-header-footer: 4000;
@@ -58,8 +58,9 @@ $z-notification: 9000;
 // BREAKPOINTS
 // ===========
 
-$small-breakpoint: 800px;
-$medium-breakpoint: 1024px;
+$small-breakpoint: 980px;
+$medium-breakpoint: 1200px;
 $large-breakpoint: 1440px;
 
+$small-container-width: 640px;
 $large-container-width: 1440px;

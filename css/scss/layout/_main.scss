@@ -1,47 +1,126 @@
 main {
   padding: 0 5rem;
   position: relative;
+}
+
+.l-hero {
+  position: relative;
+
+  height: 40rem;
+  border-radius: 0.5rem;
+  @include medium-box-shadow;
+  overflow: hidden;
+
+  background: $neutral-800;
+
+  &__heading,
+  &__text,
+  &__img {
+    position: absolute;
+  }
+
+  &__heading,
+  &__text {
+    z-index: $z-in-front;
+
+    color: white;
+  }
+
+  &__heading {
+    top: 4rem;
+
+    padding: 0 5rem;
+
+    font-size: 5.5rem;
+    font-weight: 500;
+  }
+
+  &__text {
+    top: 23rem;
+    padding: 0 2rem 0 5rem;
+
+    font-size: $h5-size;
+    line-height: 1.5;
+  }
+
+  &__img {
+    min-height: 100%;
+
+    object-fit: cover;
+  }
+
+  &__signin-btn {
+    position: absolute;
+    top: 33rem;
+    left: 5rem;
+  }
+}
+
+@media (max-width: $medium-breakpoint - 1) {
+  main {
+    padding: 0;
+  }
 
   .l-hero {
-    position: relative;
-
-    height: 40rem;
-    border-radius: 0.5rem;
-    @include medium-box-shadow;
-    overflow: hidden;
-
-    background: $neutral-800;
-
     &__heading,
-    &__text,
-    &__img {
-      position: absolute;
+    &__text {
+      padding-left: 3rem;
     }
 
     &__heading {
-      top: 4rem;
+      font-size: 5rem;
+    }
 
-      padding: 0 5rem;
-      z-index: $z-on-front;
+    &__text {
+      font-size: $h6-size;
+    }
 
-      color: white;
-      font-size: 5.5rem;
+    &__signin-btn {
+      left: 3rem;
+    }
+  }
+}
+
+@media (max-width: $small-breakpoint - 1) {
+  .l-hero {
+    height: auto;
+    @include no-box-shadow;
+
+    background: white;
+
+    &__heading,
+    &__text,
+    &__img,
+    &__signin-btn {
+      position: initial;
+    }
+
+    &__heading,
+    &__text {
+      padding-left: 0;
+
+      color: $neutral-900;
+    }
+
+    &__heading {
+      font-size: 3rem;
       font-weight: 500;
     }
 
     &__text {
-      top: 23rem;
-      padding: 0 2rem 0 5rem;
-
-      color: white;
-      font-size: $h5-size;
-      line-height: 1.5;
+      margin: 1rem 0 2rem 0;
+      font-size: $txt-size;
     }
 
     &__img {
-      height: 100%;
+      border-radius: 1rem;
+    }
 
-      object-fit: cover;
+    &__signin-btn {
+      display: flex;
+      justify-content: center;
+
+      margin: 2rem 0 1rem 0;
     }
   }
 }
