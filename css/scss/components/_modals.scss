@@ -1,4 +1,5 @@
 $open-modal-duration: 800ms;
+$modal-height: 56.5rem;
 
 @keyframes open-modal {
   from {
@@ -32,7 +33,7 @@ $open-modal-duration: 800ms;
   position: relative;
 
   max-width: 34rem;
-  height: 56.5rem;
+  height: $modal-height;
   margin: 5rem auto;
   padding: 2.5rem 2rem 1rem 2rem;
   border-radius: 0.5rem;
@@ -89,7 +90,20 @@ $open-modal-duration: 800ms;
   }
 
   &--signin-success {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+      padding: 1rem 4rem;
+
+      font-size: $h2-size;
+      text-align: center;
+    }
+
+    .c-modal__button-box {
+      transform: translateY(16rem);
+    }
   }
 
   input {

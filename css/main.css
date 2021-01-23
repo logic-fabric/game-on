@@ -1587,7 +1587,17 @@ main {
   margin-bottom: 3rem;
 }
 .c-modal--signin-success {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.c-modal--signin-success p {
+  padding: 1rem 4rem;
+  font-size: 1.81182375rem;
+  text-align: center;
+}
+.c-modal--signin-success .c-modal__button-box {
+  transform: translateY(16rem);
 }
 .c-modal input {
   display: block;
