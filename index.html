@@ -43,76 +43,260 @@
   </head>
 
   <body>
-    <header>
-      <div class="l-header__logo">
-        <img src="img/logo-gameon.png" alt="Logo de GameOn" />
-      </div>
-
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Détails de l'événement</a>
-          </li>
-          <li>
-            <a href="#">&Agrave; propos</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-          <li>
-            <a href="#">&Eacute;vénements passés</a>
-          </li>
-        </ul>
-
-        <i class="fa fa-bars" id="hamburger-icon"></i>
-      </nav>
-    </header>
-
-    <main>
-      <section class="l-hero row-12">
-        <h1 class="l-hero__heading lg10 md10 sm12">
-          Marathon national de jeux vidéos
-        </h1>
-
-        <p class="l-hero__text lg5 md5 sm12">
-          Vous aimez jouer&nbsp;? Notre prochain événement gaming est ouvert aux
-          réservations... Places limitées&nbsp;!
-        </p>
-
-        <img
-          class="l-hero__img lg7 offset-lg5 md7 offset-md5 sm12"
-          src="img/gameuse.jpg"
-          alt="Une gameuse victorieuse devant son écran"
-        />
-
-        <div class="l-hero__signin-btn lg5 md12 sm12">
-          <button class="c-btn c-btn--cta" type="button">Je m'inscris</button>
+    <div class="p-home__content">
+      <header>
+        <div class="l-header__logo">
+          <img src="img/logo-gameon.png" alt="Logo de GameOn" />
         </div>
-      </section>
-    </main>
 
-    <footer>
-      <p>Copyright 2014 - 2021, GameOn Inc.</p>
-    </footer>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Détails de l'événement</a>
+            </li>
+            <li>
+              <a href="#">&Agrave; propos</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <a href="#">&Eacute;vénements passés</a>
+            </li>
+          </ul>
 
-    <aside id="modal">
-      <form action="">
-        <fieldset></fieldset>
+          <i class="fa fa-bars" id="hamburger-icon"></i>
+        </nav>
+      </header>
 
-        <fieldset>
-          <legend>Dans quelle ville souhaitez-vous vous inscrire&nbsp;?</legend>
-        </fieldset>
+      <main>
+        <section class="l-hero row-12">
+          <h1 class="l-hero__heading lg10 md10 sm12">
+            Marathon national de jeux vidéos
+          </h1>
 
-        <fieldset></fieldset>
+          <p class="l-hero__text lg5 md5 sm12">
+            Vous aimez jouer&nbsp;? Notre prochain événement gaming est ouvert
+            aux réservations... Places limitées&nbsp;!
+          </p>
 
-        <button type="submit">C'est parti</button>
-      </form>
+          <img
+            class="l-hero__img lg7 offset-lg5 md7 offset-md5 sm12"
+            src="img/gameuse.jpg"
+            alt="Une gameuse victorieuse devant son écran"
+          />
 
-      <div>
-        <p>Nous vous remerçions pour cette inscription</p>
+          <div class="l-hero__signin-btn lg5 md12 sm12">
+            <button class="c-btn c-btn--cta" type="button">Je m'inscris</button>
+          </div>
+        </section>
+      </main>
 
-        <button type="button">Fermer</button>
-      </div>
-    </aside>
+      <footer>
+        <p>Copyright 2014 - 2021, GameOn Inc.</p>
+      </footer>
+    </div>
+
+    <!-- MODAL: -->
+    <div class="c-modal__background" id="modal">
+      <aside class="c-modal">
+        <span id="close-icon"></span>
+
+        <!-- SIGN-IN FORM: -->
+        <div class="c-modal--signin-form">
+          <form action="index.html" method="post">
+            <fieldset>
+              <div class="c-modal__form-item">
+                <label for="first-name">
+                  Nom
+                  <abbr title="Ce champ doit être rempli"> *</abbr>
+                </label>
+                <input type="text" id="first-name" name="first-name" required />
+                <p class="c-modal__form-error" aria-live="polite">
+                  Vous devez saisir un nom d'au moins 2 caractères
+                </p>
+              </div>
+
+              <div class="c-modal__form-item">
+                <label for="last-name">
+                  Prénom
+                  <abbr title="Ce champ doit être rempli"> *</abbr>
+                </label>
+                <input type="text" id="last-name" name="last-name" required />
+                <p class="c-modal__form-error" aria-live="polite">
+                  Vous devez saisir un prénom d'au moins 2 caractères
+                </p>
+              </div>
+
+              <div class="c-modal__form-item">
+                <label for="email">
+                  Email
+                  <abbr title="Ce champ doit être rempli"> *</abbr>
+                </label>
+                <input type="email" id="email" name="email" required />
+                <p class="c-modal__form-error" aria-live="polite">
+                  Vous devez saisir une adresse mail valide
+                </p>
+              </div>
+
+              <div class="c-modal__form-item">
+                <label for="birtdate"> Date de naissance </label>
+                <input type="date" id="birthdate" name="birtdate" />
+                <p class="c-modal__form-error" aria-live="polite">
+                  pas de contrainte
+                </p>
+              </div>
+
+              <div class="c-modal__form-item">
+                <label for="previous-participations">
+                  &Agrave; combien de tournois avez-vous déjà participé&nbsp;?
+                  <abbr title="Ce champ doit être rempli"> *</abbr>
+                </label>
+                <input
+                  type="number"
+                  id="previous-participations"
+                  name="previous-participations"
+                  min="0"
+                  max="99"
+                  required
+                />
+              </div>
+              <p class="c-modal__form-error" aria-live="polite">
+                Vous devez saisir un nombre de participations
+              </p>
+            </fieldset>
+
+            <!-- town radio buttons: -->
+            <fieldset>
+              <legend>
+                Dans quelle ville souhaitez-vous concourir&nbsp;?
+                <abbr title="Une ville doit être cochée"> *</abbr>
+              </legend>
+
+              <ul class="c-modal__form-item c-modal__radio-btns">
+                <li>
+                  <input
+                    type="radio"
+                    id="location-1"
+                    name="location"
+                    value="New York"
+                  />
+                  <label for="location-1">
+                    <span class="c-modal__radio-btn"></span>
+                    New-York
+                  </label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="location-2"
+                    name="location"
+                    value="San Francisco"
+                  />
+                  <label for="location-2">
+                    <span class="c-modal__radio-btn"></span>
+                    San Francisco
+                  </label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="location-3"
+                    name="location"
+                    value="Seattle"
+                  />
+                  <label for="location-3">
+                    <span class="c-modal__radio-btn"></span>
+                    Seattle
+                  </label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="location-4"
+                    name="location"
+                    value="Chicago"
+                  />
+                  <label for="location-4">
+                    <span class="c-modal__radio-btn"></span>
+                    Chicago
+                  </label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="location-5"
+                    name="location"
+                    value="Boston"
+                  />
+                  <label for="location-5">
+                    <span class="c-modal__radio-btn"></span>
+                    Boston
+                  </label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="location-6"
+                    name="location"
+                    value="Portland"
+                  />
+                  <label for="location-6">
+                    <span class="c-modal__radio-btn"></span>
+                    Portland
+                  </label>
+                </li>
+              </ul>
+
+              <p class="c-modal__form-error no-mt" aria-live="polite">
+                Vous devez choisir une ville
+              </p>
+            </fieldset>
+
+            <!-- Agreement checkboxes: -->
+            <fieldset class="c-modal__optins">
+              <div class="c-modal__form-item">
+                <input type="checkbox" id="general-conditions-optin" required />
+                <label for="general-conditions-optin">
+                  <span class="c-modal__checkbox"></span>
+                  J'ai lu et j'accepte les conditions d'utilisations.
+                  <abbr title="Cette case doit être cochée"> *</abbr>
+                </label>
+                <p class="c-modal__form-error no-mt" aria-live="polite">
+                  Vous devez accepter les conditions d'utilisation
+                </p>
+              </div>
+
+              <div class="c-modal__form-item">
+                <input type="checkbox" id="newsletter-optin" />
+                <label for="newsletter-optin">
+                  <span class="c-modal__checkbox"></span>
+                  Je souhaite être prévenu des prochaines événements.
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="c-modal__button-box">
+              <button class="c-btn c-btn--cta" type="submit">
+                C'est parti
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- SUCCESSFULL SIGN-IN:  -->
+        <div class="c-modal--signin-success">
+          <p>Vous êtes maintenant inscrition&nbsp;!</p>
+          <p>Merci pour votre particiion et à très bientôt. :-)</p>
+
+          <button class="c-btn c-btn--cta" type="button">Fermer</button>
+        </div>
+      </aside>
+    </div>
   </body>
 </html>

@@ -19,16 +19,6 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  @include large-wrapping;
-  padding: 0 2.5rem;
-
-  @media (max-width: $small-breakpoint - 1) {
-    @include small-wrapping;
-    padding: 0 1.5rem;
-  }
-}
-
 a {
   color: $neutral-900;
   text-decoration: none;
@@ -37,6 +27,14 @@ a {
     color: $neutral-900;
   }
 }
+
+abbr {
+  padding: 0 0.125rem;
+  &[title] {
+    text-decoration: none;
+  }
+}
+
 
 fieldset {
   padding: 0;

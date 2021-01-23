@@ -1273,25 +1273,19 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-}
-@media (max-width: 979px) {
-  body {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-}
-
 a {
   color: black;
   text-decoration: none;
 }
 a:hover {
   color: black;
+}
+
+abbr {
+  padding: 0 0.125rem;
+}
+abbr[title] {
+  text-decoration: none;
 }
 
 fieldset {
@@ -1509,6 +1503,7 @@ main {
   }
 }
 .c-btn {
+  min-width: 12rem;
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 0.5rem;
@@ -1525,19 +1520,192 @@ main {
   background: #3876ac;
 }
 
-#modal {
+@keyframes open-modal {
+  from {
+    top: -20rem;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.c-modal__background {
+  position: fixed;
+  top: 0;
+  z-index: 8000;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(26, 39, 156, 0.4);
+}
+
+.c-modal {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  max-width: 34rem;
+  height: 56.5rem;
+  margin: 5rem auto;
+  padding: 2.5rem 2rem 1rem 2rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0.75rem 0.55rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.75rem 0.55rem rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  color: white;
+  background: #232323;
+  animation: open-modal 800ms forwards;
+}
+.c-modal #close-icon {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+.c-modal #close-icon::after, .c-modal #close-icon::before {
+  position: absolute;
+  left: 1rem;
+  width: 0.125rem;
+  height: 1.5rem;
+  content: " ";
+  background: white;
+}
+.c-modal #close-icon::after {
+  transform: rotate(45deg);
+}
+.c-modal #close-icon::before {
+  transform: rotate(-45deg);
+}
+.c-modal--signin-form, .c-modal--signin-success {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 3rem;
+}
+.c-modal--signin-form {
+  margin-bottom: 3rem;
+}
+.c-modal--signin-success {
   display: none;
 }
-
-.p-signin-btn {
+.c-modal input {
+  display: block;
+  width: 100%;
+}
+.c-modal ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.c-modal input[type=date],
+.c-modal input[type=email],
+.c-modal input[type=number],
+.c-modal input[type=text] {
+  padding: 1rem;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+}
+.c-modal input[type=date]:focus,
+.c-modal input[type=email]:focus,
+.c-modal input[type=number]:focus,
+.c-modal input[type=text]:focus {
+  outline: none;
+}
+.c-modal label,
+.c-modal legend {
+  display: inline-block;
+  margin: 0.25rem 0 0.75rem 0;
+  cursor: default;
+}
+.c-modal__form-error, .c-modal__optins, .c-modal__radio-btns {
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+}
+.c-modal__form-error {
+  margin: 0.25rem 0 0.5rem 0;
+  color: #ff4e60;
+  font-size: 0.7875rem;
+}
+.c-modal__form-error.no-mt {
+  margin: 0rem 0 0.875rem 0;
+}
+.c-modal__checkbox, .c-modal__radio-btn {
+  display: inline-block;
   position: absolute;
-  top: 33rem;
-  left: 10rem;
+  top: -1px;
+  left: -0.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0.125rem solid #c4c4c4;
+  border-radius: 50%;
+}
+.c-modal__checkbox::after, .c-modal__radio-btn::after {
+  position: absolute;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  content: "";
+  background: #279e7a;
+  opacity: 0;
+  transform: translate(-1.375rem, 0.125rem);
+  transition: opacity 300ms;
+}
+.c-modal__checkbox {
+  border-radius: 0.25rem;
+  background: #c4c4c4;
+}
+.c-modal__checkbox::after {
+  width: 0.75rem;
+  height: 0.5rem;
+  border: 0.125rem solid transparent;
+  border-radius: 0.125rem;
+  border-bottom-color: white;
+  border-left-color: white;
+  background: transparent;
+  transform: translate(-1.375rem, 0.125rem) rotate(-55deg);
+}
+.c-modal input[type=checkbox],
+.c-modal input[type=radio] {
+  display: none;
+}
+.c-modal input[type=checkbox] + label,
+.c-modal input[type=radio] + label {
+  position: relative;
+  margin: 0 3rem 0.5rem 0;
+  text-indent: 1.5rem;
+}
+.c-modal input[type=checkbox]:checked + label .c-modal__checkbox,
+.c-modal input[type=radio]:checked + label .c-modal__checkbox {
+  background: #279e7a;
+}
+.c-modal input[type=checkbox]:checked + label .c-modal__checkbox, .c-modal input[type=checkbox]:checked + label .c-modal__radio-btn,
+.c-modal input[type=radio]:checked + label .c-modal__checkbox,
+.c-modal input[type=radio]:checked + label .c-modal__radio-btn {
+  border-color: #279e7a;
+}
+.c-modal input[type=checkbox]:checked + label .c-modal__checkbox::after, .c-modal input[type=checkbox]:checked + label .c-modal__radio-btn::after,
+.c-modal input[type=radio]:checked + label .c-modal__checkbox::after,
+.c-modal input[type=radio]:checked + label .c-modal__radio-btn::after {
+  opacity: 1;
+}
+.c-modal__button-box {
+  display: flex;
+}
+.c-modal button {
+  margin: 1.5rem auto 1rem auto;
 }
 
-@media (max-width: 1199px) {
-  .p-signin-btn {
-    position: initial;
+.p-home__content {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+@media (max-width: 979px) {
+  .p-home__content {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 }
 
