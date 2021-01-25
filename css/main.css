@@ -1361,12 +1361,12 @@ header nav {
 }
 header ul {
   display: flex;
+  font-size: 1.2375rem;
 }
 header li {
   margin: 0.5rem 0;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
-  font-size: 1.2375rem;
 }
 header li:hover {
   background: #fe142f;
@@ -1400,15 +1400,40 @@ header li:hover a {
     padding-top: 0.5rem;
     height: 2rem;
   }
+  header nav {
+    position: relative;
+  }
   header ul {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    z-index: 4000;
+    width: 14rem;
+    border: 0.125rem solid #fe142f;
+    border-radius: 0.75rem;
+    background: white;
   }
 
   #hamburger-icon {
     display: inline-block;
+    z-index: 4100;
     padding: 0.75rem;
+    border-radius: 0.5rem;
     color: #fe142f;
     font-size: 1.5rem;
+    transition: transform 150ms;
+  }
+
+  nav.side-nav ul {
+    display: flex;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.125rem;
+  }
+  nav.side-nav #hamburger-icon {
+    color: white;
+    background: #fe142f;
+    transform: translate(-1rem, 1rem);
   }
 }
 main {
