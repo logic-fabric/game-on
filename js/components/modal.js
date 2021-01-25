@@ -1,6 +1,7 @@
-const signinButton = document.getElementById("signin-btn");
-const modal = document.getElementById("modal");
 const closeIcon = document.getElementById("close-icon");
+const modalBackground = document.getElementById("modal-bg");
+const modalWindow = document.getElementById("modal-window");
+const signinButton = document.getElementById("signin-btn");
 
 // Open modal when clicking on signin button:
 signinButton.addEventListener("click", openModal);
@@ -8,10 +9,14 @@ signinButton.addEventListener("click", openModal);
 // Close modal when clicking on (x) icon in modal:
 closeIcon.addEventListener("click", closeModal);
 
+// Close modal when clicking outside modal window:
+modalWindow.addEventListener("click", (e) => e.stopPropagation());
+modalBackground.addEventListener("click", closeModal);
+
 function openModal() {
-  modal.style.display = "block";
+  modalBackground.style.display = "block";
 }
 
 function closeModal() {
-  modal.style.display = "none";
+  modalBackground.style.display = "none";
 }
