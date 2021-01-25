@@ -62,7 +62,7 @@ header {
 
     img {
       padding-top: 0.5rem;
-      height: 1.5rem;
+      height: 2rem;
     }
 
     ul {
@@ -73,8 +73,9 @@ header {
   #hamburger-icon {
     display: inline-block;
 
-    padding: 0.5rem;
+    padding: 0.75rem;
 
     color: $primary-500;
+    font-size: 1.5rem;
   }
 }

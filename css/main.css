@@ -1398,7 +1398,7 @@ header li:hover a {
   }
   header img {
     padding-top: 0.5rem;
-    height: 1.5rem;
+    height: 2rem;
   }
   header ul {
     display: none;
@@ -1406,8 +1406,9 @@ header li:hover a {
 
   #hamburger-icon {
     display: inline-block;
-    padding: 0.5rem;
+    padding: 0.75rem;
     color: #fe142f;
+    font-size: 1.5rem;
   }
 }
 main {
