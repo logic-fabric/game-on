@@ -1511,6 +1511,9 @@ main {
   font-size: 1.36125rem;
   cursor: pointer;
 }
+.c-btn:focus {
+  outline: none;
+}
 
 .c-btn--cta {
   color: white;
@@ -1532,6 +1535,7 @@ main {
   }
 }
 .c-modal__background {
+  display: none;
   position: fixed;
   top: 0;
   z-index: 8000;

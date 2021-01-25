@@ -7,6 +7,10 @@
   font-size: $h5-size;
 
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .c-btn--cta {

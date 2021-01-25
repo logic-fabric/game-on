@@ -15,7 +15,7 @@ $modal-height: 56.5rem;
 }
 
 .c-modal__background {
-  //display: none;
+  display: none;
   position: fixed;
   top: 0;
   z-index: $z-modal;
