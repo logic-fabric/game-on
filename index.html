@@ -110,23 +110,23 @@
             <fieldset>
               <div class="c-modal__form-item">
                 <label for="first-name">
-                  Nom
+                  Prénom
                   <abbr title="Ce champ doit être rempli"> *</abbr>
                 </label>
                 <input type="text" id="first-name" name="first-name" required />
                 <p class="c-modal__form-error" aria-live="polite">
-                  Vous devez saisir un nom d'au moins 2 caractères
+                  Vous devez saisir un prénom d'au moins 2 caractères
                 </p>
               </div>
 
               <div class="c-modal__form-item">
                 <label for="last-name">
-                  Prénom
+                  Nom
                   <abbr title="Ce champ doit être rempli"> *</abbr>
                 </label>
                 <input type="text" id="last-name" name="last-name" required />
                 <p class="c-modal__form-error" aria-live="polite">
-                  Vous devez saisir un prénom d'au moins 2 caractères
+                  Vous devez saisir un nom d'au moins 2 caractères
                 </p>
               </div>
 
@@ -162,10 +162,10 @@
                   max="99"
                   required
                 />
+                <p class="c-modal__form-error" aria-live="polite">
+                  Vous devez saisir un nombre de participations entre 0 et 99
+                </p>
               </div>
-              <p class="c-modal__form-error" aria-live="polite">
-                Vous devez saisir un nombre de participations
-              </p>
             </fieldset>
 
             <!-- town radio buttons: -->
@@ -263,7 +263,13 @@
             <!-- Agreement checkboxes: -->
             <fieldset class="c-modal__optins">
               <div class="c-modal__form-item">
-                <input type="checkbox" id="general-conditions-optin" required />
+                <input
+                  type="checkbox"
+                  id="general-conditions-optin"
+                  name="general-conditions-optin"
+                  value="checked"
+                  required
+                />
                 <label for="general-conditions-optin">
                   <span class="c-modal__checkbox"></span>
                   J'ai lu et j'accepte les conditions d'utilisations.
@@ -275,7 +281,12 @@
               </div>
 
               <div class="c-modal__form-item">
-                <input type="checkbox" id="newsletter-optin" />
+                <input
+                  type="checkbox"
+                  id="newsletter-optin"
+                  name="newsletter-optin"
+                  value="checked"
+                />
                 <label for="newsletter-optin">
                   <span class="c-modal__checkbox"></span>
                   Je souhaite être prévenu des prochaines événements.
