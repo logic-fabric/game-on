@@ -106,14 +106,20 @@
 
         <!-- SIGN-IN FORM: -->
         <div class="c-modal--signin-form">
-          <form id="modal-form" action="index.html" method="post">
+          <form id="modal-form" action="index.html" method="post" novalidate>
             <fieldset>
               <div class="c-modal__form-item">
                 <label for="first-name">
                   Prénom
                   <abbr title="Ce champ doit être rempli"> *</abbr>
                 </label>
-                <input type="text" id="first-name" name="first-name" required />
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  minlength="2"
+                  required
+                />
                 <p class="c-modal__form-error" aria-live="polite">
                   Vous devez saisir un prénom d'au moins 2 caractères
                 </p>
@@ -124,7 +130,13 @@
                   Nom
                   <abbr title="Ce champ doit être rempli"> *</abbr>
                 </label>
-                <input type="text" id="last-name" name="last-name" required />
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  minlength="2"
+                  required
+                />
                 <p class="c-modal__form-error" aria-live="polite">
                   Vous devez saisir un nom d'au moins 2 caractères
                 </p>
@@ -159,11 +171,11 @@
                   id="previous-participations"
                   name="previous-participations"
                   min="0"
-                  max="99"
+                  max="20"
                   required
                 />
                 <p class="c-modal__form-error" aria-live="polite">
-                  Vous devez saisir un nombre de participations entre 0 et 99
+                  Vous devez saisir un nombre de participations entre 0 et 20
                 </p>
               </div>
             </fieldset>
@@ -255,7 +267,11 @@
                 </li>
               </ul>
 
-              <p class="c-modal__form-error no-mt" aria-live="polite">
+              <p
+                class="c-modal__form-error no-mt"
+                id="location-error-field"
+                aria-live="polite"
+              >
                 Vous devez choisir une ville
               </p>
             </fieldset>
@@ -267,7 +283,6 @@
                   type="checkbox"
                   id="general-conditions-optin"
                   name="general-conditions-optin"
-                  value="checked"
                   required
                 />
                 <label for="general-conditions-optin">
@@ -285,7 +300,6 @@
                   type="checkbox"
                   id="newsletter-optin"
                   name="newsletter-optin"
-                  value="checked"
                 />
                 <label for="newsletter-optin">
                   <span class="c-modal__checkbox"></span>
