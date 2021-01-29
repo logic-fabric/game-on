@@ -1652,6 +1652,12 @@ main {
 .c-modal input[type=text]:focus {
   outline: none;
 }
+.c-modal input[type=date].border-danger,
+.c-modal input[type=email].border-danger,
+.c-modal input[type=number].border-danger,
+.c-modal input[type=text].border-danger {
+  border-color: #ff4e60;
+}
 .c-modal label,
 .c-modal legend {
   display: inline-block;
@@ -1667,6 +1673,9 @@ main {
   color: #232323;
   font-size: 0.7875rem;
   transition: color 200ms;
+}
+.c-modal__form-error.txt-danger {
+  color: #ff4e60;
 }
 .c-modal__form-error.no-mt {
   margin: 0rem 0 0.875rem 0;

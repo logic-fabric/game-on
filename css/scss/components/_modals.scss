@@ -130,6 +130,10 @@ $modal-height: 56.5rem;
     &:focus {
       outline: none;
     }
+
+    &.border-danger {
+      border-color: $danger-500;
+    }
   }
 
   label,
@@ -156,6 +160,10 @@ $modal-height: 56.5rem;
 
     transition: color 200ms;
 
+    &.txt-danger {
+      color: $danger-500;
+    }
+    
     &.no-mt {
       margin: 0rem 0 0.875rem 0;
     }
