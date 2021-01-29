@@ -1,3 +1,12 @@
+const FIRST_NAME_MESSAGE =
+  "Vous devez saisir un prénom d'au moins 2 caractères";
+const LAST_NAME_MESSAGE = "Vous devez saisir un nom d'au moins 2 caractères";
+const EMAIL_MESSAGE = "Vous devez saisir une adresse mail valide";
+const PARTICIPATIONS_MESSAGE =
+  "Vous devez saisir un nombre de participations entre 0 et 20";
+const LOCATION_MESSAGE = "Vous devez choisir une ville";
+const OPTIN_MESSAGE = "Vous devez accepter les conditions d'utilisation";
+
 const firstName = document.getElementById("first-name");
 const firstNameError = document.querySelector("#first-name + p");
 
@@ -26,20 +35,20 @@ document.getElementById("modal-form").onsubmit = (e) => e.preventDefault();
 
 // Check first name validity:
 firstName.oninput = () => {
-  displayNameValidity(firstName, firstNameError);
+  displayFirstNameValidity(firstName, firstNameError);
 };
 
 firstName.addEventListener("focusout", () => {
-  displayNameValidity(firstName, firstNameError);
+  displayFirstNameValidity(firstName, firstNameError);
 });
 
 // Check last name validity:
 lastName.oninput = () => {
-  displayNameValidity(lastName, lastNameError);
+  displayLastNameValidity(lastName, lastNameError);
 };
 
 lastName.addEventListener("focusout", () => {
-  displayNameValidity(lastName, lastNameError);
+  displayLastNameValidity(lastName, lastNameError);
 });
 
 // Check email validity:
@@ -87,12 +96,30 @@ const isValidParticipationsQuantity = (quantity) => {
   );
 };
 
-const displayNameValidity = (inputField, errorField) => {
+const displayFirstNameValidity = (inputField, errorField) => {
   if (isValidName(inputField.value)) {
     inputField.classList.remove("border-danger");
+
+    errorField.textContent = "";
     errorField.classList.remove("txt-danger");
   } else {
     inputField.classList.add("border-danger");
+
+    errorField.textContent = FIRST_NAME_MESSAGE;
+    errorField.classList.add("txt-danger");
+  }
+};
+
+const displayLastNameValidity = (inputField, errorField) => {
+  if (isValidName(inputField.value)) {
+    inputField.classList.remove("border-danger");
+
+    errorField.textContent = "";
+    errorField.classList.remove("txt-danger");
+  } else {
+    inputField.classList.add("border-danger");
+
+    errorField.textContent = LAST_NAME_MESSAGE;
     errorField.classList.add("txt-danger");
   }
 };
@@ -100,9 +127,13 @@ const displayNameValidity = (inputField, errorField) => {
 const displayEmailValidity = (emailField, errorField) => {
   if (email.validity.valid) {
     emailField.classList.remove("border-danger");
+
+    errorField.textContent = "";
     errorField.classList.remove("txt-danger");
   } else {
     emailField.classList.add("border-danger");
+
+    errorField.textContent = EMAIL_MESSAGE;
     errorField.classList.add("txt-danger");
   }
 };
@@ -110,17 +141,23 @@ const displayEmailValidity = (emailField, errorField) => {
 const displayParticipationsValidity = (participationsField, errorField) => {
   if (isValidParticipationsQuantity(previousParticipations.value)) {
     participationsField.classList.remove("border-danger");
+
+    errorField.textContent = "";
     errorField.classList.remove("txt-danger");
   } else {
     participationsField.classList.add("border-danger");
+
+    errorField.textContent = PARTICIPATIONS_MESSAGE;
     errorField.classList.add("txt-danger");
   }
 };
 
 const displayOptinValidity = (optinField, errorField) => {
   if (optinField.checked) {
+    errorField.textContent = "";
     errorField.classList.remove("txt-danger");
   } else {
+    errorField.textContent = OPTIN_MESSAGE;
     errorField.classList.add("txt-danger");
   }
 };

@@ -161,6 +161,7 @@ $modal-height: 56.5rem;
   }
 
   &__form-error {
+    height: $txt-size;
     margin: 0.25rem 0 0.5rem 0;
 
     color: $neutral-800;
