@@ -1,11 +1,24 @@
 const firstName = document.getElementById("first-name");
+const firstNameError = document.querySelector("#first-name + p");
+
 const lastName = document.getElementById("last-name");
+const lastNameError = document.querySelector("#last-name + p");
+
 const email = document.getElementById("email");
+const emailError = document.querySelector("#email + p");
+
 const previousParticipations = document.getElementById(
   "previous-participations"
 );
+const previousParticpationsError = document.querySelector(
+  "#previous-participations + p"
+);
+
 const generalConditionsOptin = document.getElementById(
   "general-conditions-optin"
+);
+const generalConditionsOptinError = document.querySelector(
+  "#general-conditions-optin ~ p"
 );
 
 // Bypass submit:
@@ -13,37 +26,49 @@ document.getElementById("modal-form").onsubmit = (e) => e.preventDefault();
 
 // Check first name validity:
 firstName.oninput = () => {
-  const errorField = document.querySelector("#first-name + p");
-  displayNameValidity(firstName, errorField);
+  displayNameValidity(firstName, firstNameError);
 };
+
+firstName.addEventListener("focusout", () => {
+  displayNameValidity(firstName, firstNameError);
+});
 
 // Check last name validity:
 lastName.oninput = () => {
-  const errorField = document.querySelector("#last-name + p");
-  displayNameValidity(lastName, errorField);
+  displayNameValidity(lastName, lastNameError);
 };
+
+lastName.addEventListener("focusout", () => {
+  displayNameValidity(lastName, lastNameError);
+});
 
 // Check email validity:
 email.oninput = () => {
-  const errorField = document.querySelector("#email + p");
-  displayEmailValidity(email, errorField);
+  displayEmailValidity(email, emailError);
 };
+
+email.addEventListener("focusout", () => {
+  displayEmailValidity(email, emailError);
+});
 
 // Check previous participations:
 previousParticipations.addEventListener("focusout", () => {
-  const errorField = document.querySelector("#previous-participations + p");
-  displayParticipationsValidity(previousParticipations, errorField);
+  displayParticipationsValidity(
+    previousParticipations,
+    previousParticpationsError
+  );
 });
 
 previousParticipations.onchange = () => {
-  const errorField = document.querySelector("#previous-participations + p");
-  displayParticipationsValidity(previousParticipations, errorField);
+  displayParticipationsValidity(
+    previousParticipations,
+    previousParticpationsError
+  );
 };
 
 // Check if general conditions have been checked:
 generalConditionsOptin.onchange = () => {
-  const errorField = document.querySelector("#general-conditions-optin ~ p");
-  displayOptinValidity(generalConditionsOptin, errorField);
+  displayOptinValidity(generalConditionsOptin, generalConditionsOptinError);
 };
 
 /* =================
