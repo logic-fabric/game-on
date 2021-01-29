@@ -1428,6 +1428,8 @@ header li:hover a {
   nav.side-nav ul {
     display: flex;
     padding: 0.25rem 0.5rem;
+    -webkit-box-shadow: 0 0.75rem 0.55rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.75rem 0.55rem rgba(0, 0, 0, 0.25);
     font-size: 1.125rem;
   }
   nav.side-nav #hamburger-icon {
