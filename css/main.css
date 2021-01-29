@@ -1410,7 +1410,7 @@ header li:hover a {
     right: 0;
     z-index: 4000;
     width: 14rem;
-    border: 0.125rem solid #fe142f;
+    border: 0.125rem solid #c4c4c4;
     border-radius: 0.75rem;
     background: white;
   }
