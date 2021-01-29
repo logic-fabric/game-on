@@ -1,5 +1,4 @@
 $open-modal-duration: 800ms;
-$modal-height: 56.5rem;
 
 @keyframes open-modal {
   from {
@@ -33,7 +32,6 @@ $modal-height: 56.5rem;
   position: relative;
 
   max-width: 34rem;
-  height: $modal-height;
   margin: 5rem auto;
   padding: 2.5rem 2rem 1rem 2rem;
   border-radius: 0.5rem;
@@ -81,12 +79,12 @@ $modal-height: 56.5rem;
   &--signin-form,
   &--signin-success {
     width: 100%;
-    height: 100%;
-    margin-bottom: 3rem;
+    height: 0;
+    overflow: hidden;
   }
 
   &--signin-form {
-    margin-bottom: 3rem;
+    height: auto;
   }
 
   &--signin-success {
