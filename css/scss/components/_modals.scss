@@ -127,6 +127,14 @@ $modal-height: 56.5rem;
 
     font-size: $txt-size;
 
+    @media (max-width: $medium-breakpoint - 1) {
+      padding: 0.75rem 1rem;
+    }
+
+    @media (max-width: $small-breakpoint - 1) {
+      padding: 0.5rem 0.75rem;
+    }
+
     &:focus {
       outline: none;
     }
@@ -163,7 +171,7 @@ $modal-height: 56.5rem;
     &.txt-danger {
       color: $danger-500;
     }
-    
+
     &.no-mt {
       margin: 0rem 0 0.875rem 0;
     }

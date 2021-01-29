@@ -1648,6 +1648,22 @@ main {
   border-radius: 0.5rem;
   font-size: 1.125rem;
 }
+@media (max-width: 1199px) {
+  .c-modal input[type=date],
+.c-modal input[type=email],
+.c-modal input[type=number],
+.c-modal input[type=text] {
+    padding: 0.75rem 1rem;
+  }
+}
+@media (max-width: 979px) {
+  .c-modal input[type=date],
+.c-modal input[type=email],
+.c-modal input[type=number],
+.c-modal input[type=text] {
+    padding: 0.5rem 0.75rem;
+  }
+}
 .c-modal input[type=date]:focus,
 .c-modal input[type=email]:focus,
 .c-modal input[type=number]:focus,
