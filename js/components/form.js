@@ -90,7 +90,17 @@ generalConditionsOptin.onchange = () => {
 document.getElementById("modal-form").onsubmit = (e) => {
   e.preventDefault();
 
+  removeAllErrors();
+
+  displayFirstNameValidity(firstName, firstNameError);
+  displayLastNameValidity(lastName, lastNameError);
+  displayEmailValidity(email, emailError);
+  displayParticipationsValidity(
+    previousParticipations,
+    previousParticpationsError
+  );
   displayLocationValidity(locationError);
+  displayOptinValidity(generalConditionsOptin, generalConditionsOptinError);
 };
 
 /* =================
@@ -186,5 +196,21 @@ const displayOptinValidity = (optinField, errorField) => {
   } else {
     errorField.textContent = OPTIN_MESSAGE;
     errorField.classList.add("txt-danger");
+  }
+};
+
+const removeAllErrors = () => {
+  const errorFields = [
+    firstNameError,
+    lastNameError,
+    emailError,
+    previousParticpationsError,
+    locationError,
+    generalConditionsOptinError,
+  ];
+
+  for (const errorField of errorFields) {
+    errorField.textContent = "";
+    errorField.classList.remove("txt-danger");
   }
 };
