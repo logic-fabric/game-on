@@ -1690,7 +1690,7 @@ main {
   margin: 0.25rem 0 0.5rem 0;
   color: #232323;
   font-size: 0.7875rem;
-  transition: color 200ms;
+  transition: color 350ms;
 }
 .c-modal__form-error.txt-danger {
   color: #ff4e60;

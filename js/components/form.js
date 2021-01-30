@@ -23,6 +23,8 @@ const previousParticpationsError = document.querySelector(
   "#previous-participations + p"
 );
 
+const locationError = document.getElementById("location-error-field");
+
 const generalConditionsOptin = document.getElementById(
   "general-conditions-optin"
 );
@@ -30,8 +32,9 @@ const generalConditionsOptinError = document.querySelector(
   "#general-conditions-optin ~ p"
 );
 
-// Bypass submit:
-document.getElementById("modal-form").onsubmit = (e) => e.preventDefault();
+/* =======================
+   CHECK FIELDS ON THE FLY
+   ======================= */
 
 // Check first name validity:
 firstName.oninput = () => {
@@ -78,6 +81,16 @@ previousParticipations.onchange = () => {
 // Check if general conditions have been checked:
 generalConditionsOptin.onchange = () => {
   displayOptinValidity(generalConditionsOptin, generalConditionsOptinError);
+};
+
+/* ====================
+   CHECK FORM ON SUBMIT
+   ==================== */
+
+document.getElementById("modal-form").onsubmit = (e) => {
+  e.preventDefault();
+
+  displayLocationValidity(locationError);
 };
 
 /* =================
@@ -148,6 +161,20 @@ const displayParticipationsValidity = (participationsField, errorField) => {
     participationsField.classList.add("border-danger");
 
     errorField.textContent = PARTICIPATIONS_MESSAGE;
+    errorField.classList.add("txt-danger");
+  }
+};
+
+const displayLocationValidity = (errorField) => {
+  const checkedRadioButtons = document.querySelector(
+    'input[name="location"]:checked'
+  );
+
+  if (checkedRadioButtons !== null) {
+    errorField.textContent = "";
+    errorField.classList.remove("txt-danger");
+  } else {
+    errorField.textContent = LOCATION_MESSAGE;
     errorField.classList.add("txt-danger");
   }
 };
