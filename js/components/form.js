@@ -23,6 +23,9 @@ const previousParticpationsError = document.querySelector(
   "#previous-participations + p"
 );
 
+const locationRadioadioButtons = document.querySelectorAll(
+  'input[name="location"]'
+);
 const locationError = document.getElementById("location-error-field");
 
 const generalConditionsOptin = document.getElementById(
@@ -77,6 +80,21 @@ previousParticipations.onchange = () => {
     previousParticpationsError
   );
 };
+
+// Check if a town has been selected:
+locationRadioadioButtons.forEach((btn) =>
+  btn.addEventListener("change", () => {
+    const checkedRadioButtons = document.querySelector(
+      'input[name="location"]:checked'
+    );
+
+    if (checkedRadioButtons === null) {
+      locationError.classList.add("txt-danger");
+    } else {
+      locationError.classList.remove("txt-danger");
+    }
+  })
+);
 
 // Check if general conditions have been checked:
 generalConditionsOptin.onchange = () => {
