@@ -248,7 +248,7 @@ const displaySuccessfullSignin = () => {
   modalSuccessWrapper.style.height = modalHeight;
 };
 
-const removeAllErrors = () => {
+export const removeAllErrors = () => {
   const errorFields = [
     firstNameError,
     lastNameError,
@@ -257,9 +257,14 @@ const removeAllErrors = () => {
     locationError,
     generalConditionsOptinError,
   ];
+  const inputFields = document.querySelectorAll("input");
 
   for (const errorField of errorFields) {
     errorField.textContent = "";
     errorField.classList.remove("txt-danger");
+  }
+
+  for (let inputField of inputFields) {
+    inputField.classList.remove("border-danger");
   }
 };

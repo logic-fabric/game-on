@@ -1,3 +1,5 @@
+import { removeAllErrors } from "./form.js";
+
 const modalBackground = document.getElementById("modal-bg");
 const modalWindow = document.getElementById("modal-window");
 const modalFormWrapper = document.getElementById("modal-form-wrapper");
@@ -18,6 +20,7 @@ document.getElementById("close-modal-btn").onclick = closeModal;
 
 function openModal() {
   document.getElementById("modal-form").reset();
+  removeAllErrors();
 
   modalFormWrapper.style.height = "auto";
   modalSuccessWrapper.style.height = 0;
