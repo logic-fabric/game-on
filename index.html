@@ -105,8 +105,13 @@
         <span id="close-icon"></span>
 
         <!-- SIGN-IN FORM: -->
-        <div class="c-modal--signin-form">
-          <form id="modal-form" action="index.html" method="post" novalidate>
+        <div class="c-modal--signin-form" id="modal-form-wrapper">
+          <form
+            id="modal-form"
+            action="index.html"
+            method="post"
+            novalidate
+          >
             <fieldset>
               <div class="c-modal__form-item">
                 <label for="first-name">
@@ -303,12 +308,14 @@
         </div>
 
         <!-- SUCCESSFULL SIGN-IN:  -->
-        <div class="c-modal--signin-success">
+        <div class="c-modal--signin-success" id="modal-success-wrapper">
           <p>Vous êtes maintenant inscrit&nbsp;!</p>
           <p>Merci pour votre participation et à très bientôt.</p>
 
           <div class="c-modal__button-box">
-            <button class="c-btn c-btn--cta" type="button">Fermer</button>
+            <button class="c-btn c-btn--cta" id="close-modal-btn" type="button">
+              Fermer
+            </button>
           </div>
         </div>
       </aside>

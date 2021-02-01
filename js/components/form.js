@@ -88,10 +88,12 @@ locationRadioadioButtons.forEach((btn) =>
       'input[name="location"]:checked'
     );
 
-    if (checkedRadioButtons === null) {
-      locationError.classList.add("txt-danger");
-    } else {
+    if (checkedRadioButtons !== null) {
+      locationError.textContent = "";
       locationError.classList.remove("txt-danger");
+    } else {
+      locationError.textContent = LOCATION_MESSAGE;
+      locationError.classList.add("txt-danger");
     }
   })
 );
@@ -119,6 +121,10 @@ document.getElementById("modal-form").onsubmit = (e) => {
   );
   displayLocationValidity(locationError);
   displayOptinValidity(generalConditionsOptin, generalConditionsOptinError);
+
+  if (isValidForm()) {
+    displaySuccessfullSignin();
+  }
 };
 
 /* =================
@@ -134,6 +140,21 @@ const isValidParticipationsQuantity = (quantity) => {
     previousParticipations.value !== "" &&
     Number(previousParticipations.value) >= 0 &&
     Number(previousParticipations.value) <= 20
+  );
+};
+
+const isValidForm = () => {
+  const checkedRadioButtons = document.querySelector(
+    'input[name="location"]:checked'
+  );
+
+  return (
+    isValidName(firstName.value) &&
+    isValidName(lastName.value) &&
+    email.validity.valid &&
+    isValidParticipationsQuantity(previousParticipations.value) &&
+    checkedRadioButtons !== null &&
+    generalConditionsOptin.checked
   );
 };
 
@@ -215,6 +236,16 @@ const displayOptinValidity = (optinField, errorField) => {
     errorField.textContent = OPTIN_MESSAGE;
     errorField.classList.add("txt-danger");
   }
+};
+
+const displaySuccessfullSignin = () => {
+  const modalFormWrapper = document.getElementById("modal-form-wrapper");
+  const modalSuccessWrapper = document.getElementById("modal-success-wrapper");
+
+  const modalHeight = getComputedStyle(modalFormWrapper).height;
+
+  modalFormWrapper.style.height = 0;
+  modalSuccessWrapper.style.height = modalHeight;
 };
 
 const removeAllErrors = () => {
