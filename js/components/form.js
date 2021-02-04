@@ -132,7 +132,7 @@ document.getElementById("modal-form").onsubmit = (e) => {
    ================= */
 
 const isValidName = (name) => {
-  return name.length > 2;
+  return name.length >= 2;
 };
 
 const isValidParticipationsQuantity = (quantity) => {
