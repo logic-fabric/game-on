@@ -1,3 +1,7 @@
+/**
+ * Module to manage sign-in form checkings.
+ */
+
 const FIRST_NAME_MESSAGE =
   "Vous devez saisir un prénom d'au moins 2 caractères";
 const LAST_NAME_MESSAGE = "Vous devez saisir un nom d'au moins 2 caractères";
@@ -144,14 +148,29 @@ document.getElementById("modal-form").onsubmit = (e) => {
    UTILITY FUNCTIONS
    ================= */
 
+/**
+ * Check if a name has 2 or more characters.
+ * @param {string} name
+ * @returns {boolean}
+ */
 const isValidName = (name) => {
   return name.length >= 2;
 };
 
+/**
+ * Check if birthdate is not empty.
+ * @param {string} birthdate
+ * @returns {boolean}
+ */
 const isValidBirthdate = (birthdate) => {
   return birthdate != "";
 };
 
+/**
+ * Check if a number of participations is defined and is between 0 and 20.
+ * @param {number} quantity
+ * @returns {boolean}
+ */
 const isValidParticipationsQuantity = (quantity) => {
   return (
     previousParticipations.value !== "" &&
@@ -160,6 +179,10 @@ const isValidParticipationsQuantity = (quantity) => {
   );
 };
 
+/**
+ * Check if first name, last name, email, birthdate, number of participations, location and general conditions opt-in are valid before submitting.
+ * @returns {boolean}
+ */
 const isValidForm = () => {
   const checkedRadioButtons = document.querySelector(
     'input[name="location"]:checked'
@@ -176,6 +199,11 @@ const isValidForm = () => {
   );
 };
 
+/**
+ * Display/remove error message about first name validity.
+ * @param {HTMLElement.<input>} inputField
+ * @param {HTMLElement.<p>} errorField
+ */
 const displayFirstNameValidity = (inputField, errorField) => {
   if (isValidName(inputField.value)) {
     inputField.classList.remove("border-danger");
@@ -190,6 +218,11 @@ const displayFirstNameValidity = (inputField, errorField) => {
   }
 };
 
+/**
+ * Display/remove error message about last name validity.
+ * @param {HTMLElement.<input>} inputField
+ * @param {HTMLElement.<p>} errorField
+ */
 const displayLastNameValidity = (inputField, errorField) => {
   if (isValidName(inputField.value)) {
     inputField.classList.remove("border-danger");
@@ -204,6 +237,11 @@ const displayLastNameValidity = (inputField, errorField) => {
   }
 };
 
+/**
+ * Display/remove error message about email validity.
+ * @param {HTMLElement.<input>} emailField
+ * @param {HTMLElement.<p>} errorField
+ */
 const displayEmailValidity = (emailField, errorField) => {
   if (email.validity.valid) {
     emailField.classList.remove("border-danger");
@@ -218,20 +256,30 @@ const displayEmailValidity = (emailField, errorField) => {
   }
 };
 
-const displayBirthdateValidity = (inputField, errorField) => {
-  if (isValidBirthdate(inputField.value)) {
-    inputField.classList.remove("border-danger");
+/**
+ * Display/remove error message about birthdate validity.
+ * @param {HTMLElement.<input>} birthdateField
+ * @param {HTMLElement.<p>} errorField
+ */
+const displayBirthdateValidity = (birthdateField, errorField) => {
+  if (isValidBirthdate(birthdateField.value)) {
+    birthdateField.classList.remove("border-danger");
 
     errorField.textContent = "";
     errorField.classList.remove("txt-danger");
   } else {
-    inputField.classList.add("border-danger");
+    birthdateField.classList.add("border-danger");
 
     errorField.textContent = BIRTHDATE_MESSAGE;
     errorField.classList.add("txt-danger");
   }
 };
 
+/**
+ * Display/remove error message about number of previous participations validity.
+ * @param {HTMLElement.<input>} participationsField
+ * @param {HTMLElement.<p>} errorField
+ */
 const displayParticipationsValidity = (participationsField, errorField) => {
   if (isValidParticipationsQuantity(previousParticipations.value)) {
     participationsField.classList.remove("border-danger");
@@ -246,6 +294,10 @@ const displayParticipationsValidity = (participationsField, errorField) => {
   }
 };
 
+/**
+ * Display/remove error message about location selection.
+ * @param {HTMLElement/<p>} errorField
+ */
 const displayLocationValidity = (errorField) => {
   const checkedRadioButtons = document.querySelector(
     'input[name="location"]:checked'
@@ -260,6 +312,11 @@ const displayLocationValidity = (errorField) => {
   }
 };
 
+/**
+ * Display/remove error message about general conditions opt-in checking.
+ * @param {HTMLElement.<input>} optinField
+ * @param {HTMLElement.<p>} errorField
+ */
 const displayOptinValidity = (optinField, errorField) => {
   if (optinField.checked) {
     errorField.textContent = "";
@@ -270,6 +327,9 @@ const displayOptinValidity = (optinField, errorField) => {
   }
 };
 
+/**
+ * Remove sign-in form and display success message in modal.
+ */
 const displaySuccessfullSignin = () => {
   const modalFormWrapper = document.getElementById("modal-form-wrapper");
   const modalSuccessWrapper = document.getElementById("modal-success-wrapper");
@@ -280,6 +340,9 @@ const displaySuccessfullSignin = () => {
   modalSuccessWrapper.style.height = modalHeight;
 };
 
+/**
+ * Remove all error messages on the form.
+ */
 export const removeAllErrors = () => {
   const errorFields = [
     firstNameError,

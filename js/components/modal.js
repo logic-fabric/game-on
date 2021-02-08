@@ -1,3 +1,7 @@
+/**
+ * Module to manage opening and closing modal events.
+ */
+
 import { removeAllErrors } from "./form.js";
 
 const modalBackground = document.getElementById("modal-bg");
@@ -18,6 +22,14 @@ modalBackground.onclick = closeModal;
 // Close modal when clicking on clode button after successfull sign-in:
 document.getElementById("close-modal-btn").onclick = closeModal;
 
+/* =================
+   UTILITY FUNCTIONS
+   ================= */
+
+/**
+ * Open modal.
+ * Form appears and success message is masked if previously displayed.
+ */
 function openModal() {
   document.getElementById("modal-form").reset();
   removeAllErrors();
@@ -28,6 +40,9 @@ function openModal() {
   modalBackground.style.display = "block";
 }
 
+/**
+ * Close modal.
+ */
 function closeModal() {
   modalBackground.style.display = "none";
 }
