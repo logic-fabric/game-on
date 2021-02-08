@@ -155,8 +155,11 @@
               </div>
 
               <div class="c-modal__form-item">
-                <label for="birtdate"> Date de naissance </label>
-                <input type="date" id="birthdate" name="birtdate" />
+                <label for="birthdate">
+                  Date de naissance
+                  <abbr title="Ce champ doit être rempli"> *</abbr>
+                </label>
+                <input type="date" id="birthdate" name="birthdate" required />
                 <p class="c-modal__form-error" aria-live="polite"></p>
               </div>
 

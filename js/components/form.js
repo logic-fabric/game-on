@@ -2,6 +2,7 @@ const FIRST_NAME_MESSAGE =
   "Vous devez saisir un prénom d'au moins 2 caractères";
 const LAST_NAME_MESSAGE = "Vous devez saisir un nom d'au moins 2 caractères";
 const EMAIL_MESSAGE = "Vous devez saisir une adresse mail valide";
+const BIRTHDATE_MESSAGE = "Vous devez indiquer votre date de naissance";
 const PARTICIPATIONS_MESSAGE =
   "Vous devez saisir un nombre de participations entre 0 et 20";
 const LOCATION_MESSAGE = "Vous devez choisir une ville";
@@ -16,10 +17,13 @@ const lastNameError = document.querySelector("#last-name + p");
 const email = document.getElementById("email");
 const emailError = document.querySelector("#email + p");
 
+const birthdate = document.getElementById("birthdate");
+const birthdateError = document.querySelector("#birthdate + p");
+
 const previousParticipations = document.getElementById(
   "previous-participations"
 );
-const previousParticpationsError = document.querySelector(
+const previousParticipationsError = document.querySelector(
   "#previous-participations + p"
 );
 
@@ -66,18 +70,26 @@ email.addEventListener("focusout", () => {
   displayEmailValidity(email, emailError);
 });
 
+// Check birthdate:
+birthdate.oninput = () => {
+  displayBirthdateValidity(birthdate, birthdateError);
+};
+birthdate.addEventListener("focusout", () => {
+  displayBirthdateValidity(birthdate, birthdateError);
+});
+
 // Check previous participations:
 previousParticipations.addEventListener("focusout", () => {
   displayParticipationsValidity(
     previousParticipations,
-    previousParticpationsError
+    previousParticipationsError
   );
 });
 
 previousParticipations.onchange = () => {
   displayParticipationsValidity(
     previousParticipations,
-    previousParticpationsError
+    previousParticipationsError
   );
 };
 
@@ -115,9 +127,10 @@ document.getElementById("modal-form").onsubmit = (e) => {
   displayFirstNameValidity(firstName, firstNameError);
   displayLastNameValidity(lastName, lastNameError);
   displayEmailValidity(email, emailError);
+  displayBirthdateValidity(birthdate, birthdateError);
   displayParticipationsValidity(
     previousParticipations,
-    previousParticpationsError
+    previousParticipationsError
   );
   displayLocationValidity(locationError);
   displayOptinValidity(generalConditionsOptin, generalConditionsOptinError);
@@ -133,6 +146,10 @@ document.getElementById("modal-form").onsubmit = (e) => {
 
 const isValidName = (name) => {
   return name.length >= 2;
+};
+
+const isValidBirthdate = (birthdate) => {
+  return birthdate != "";
 };
 
 const isValidParticipationsQuantity = (quantity) => {
@@ -152,6 +169,7 @@ const isValidForm = () => {
     isValidName(firstName.value) &&
     isValidName(lastName.value) &&
     email.validity.valid &&
+    isValidBirthdate(birthdate.value) &&
     isValidParticipationsQuantity(previousParticipations.value) &&
     checkedRadioButtons !== null &&
     generalConditionsOptin.checked
@@ -196,6 +214,20 @@ const displayEmailValidity = (emailField, errorField) => {
     emailField.classList.add("border-danger");
 
     errorField.textContent = EMAIL_MESSAGE;
+    errorField.classList.add("txt-danger");
+  }
+};
+
+const displayBirthdateValidity = (inputField, errorField) => {
+  if (isValidBirthdate(inputField.value)) {
+    inputField.classList.remove("border-danger");
+
+    errorField.textContent = "";
+    errorField.classList.remove("txt-danger");
+  } else {
+    inputField.classList.add("border-danger");
+
+    errorField.textContent = BIRTHDATE_MESSAGE;
     errorField.classList.add("txt-danger");
   }
 };
@@ -253,7 +285,8 @@ export const removeAllErrors = () => {
     firstNameError,
     lastNameError,
     emailError,
-    previousParticpationsError,
+    birthdateError,
+    previousParticipationsError,
     locationError,
     generalConditionsOptinError,
   ];
