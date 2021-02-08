@@ -38,6 +38,8 @@ header {
 
 #hamburger-icon {
   display: none;
+
+  cursor: pointer;
 }
 
 @media (max-width: $medium-breakpoint - 1) {
