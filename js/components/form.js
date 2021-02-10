@@ -2,9 +2,8 @@
  * Module to manage sign-in form checkings.
  */
 
-const FIRST_NAME_MESSAGE =
-  "Vous devez saisir un prénom d'au moins 2 caractères";
-const LAST_NAME_MESSAGE = "Vous devez saisir un nom d'au moins 2 caractères";
+const NAME_MESSAGE =
+  "Deux caractères minimum, sans chiffre, caractère spécial ou espace inutile";
 const EMAIL_MESSAGE = "Vous devez saisir une adresse mail valide";
 const BIRTHDATE_MESSAGE = "Vous devez indiquer votre date de naissance";
 const PARTICIPATIONS_MESSAGE =
@@ -154,7 +153,9 @@ document.getElementById("modal-form").onsubmit = (e) => {
  * @returns {boolean}
  */
 const isValidName = (name) => {
-  return name.length >= 2;
+  const nameRegex = /^[a-zA-Z]+[a-zA-Z -]*[a-zA-Z]$/;
+
+  return nameRegex.test(name);
 };
 
 /**
@@ -213,7 +214,7 @@ const displayFirstNameValidity = (inputField, errorField) => {
   } else {
     inputField.classList.add("border-danger");
 
-    errorField.textContent = FIRST_NAME_MESSAGE;
+    errorField.textContent = NAME_MESSAGE;
     errorField.classList.add("txt-danger");
   }
 };
@@ -232,7 +233,7 @@ const displayLastNameValidity = (inputField, errorField) => {
   } else {
     inputField.classList.add("border-danger");
 
-    errorField.textContent = LAST_NAME_MESSAGE;
+    errorField.textContent = NAME_MESSAGE;
     errorField.classList.add("txt-danger");
   }
 };
