@@ -2,10 +2,12 @@
  * Module to manage sign-in form checkings.
  */
 
+const PARTICIPANTS_MINIMUM_AGE = 16;
+
 const NAME_MESSAGE =
   "Deux caractères minimum, sans chiffre, caractère spécial ou espace inutile";
 const EMAIL_MESSAGE = "Vous devez saisir une adresse mail valide";
-const BIRTHDATE_MESSAGE = "Vous devez indiquer votre date de naissance";
+const BIRTHDATE_MESSAGE = `Vous devez indiquer une date valide et avoir plus de ${PARTICIPANTS_MINIMUM_AGE} ans`;
 const PARTICIPATIONS_MESSAGE =
   "Vous devez saisir un nombre de participations entre 0 et 20";
 const LOCATION_MESSAGE = "Vous devez choisir une ville";
@@ -159,12 +161,22 @@ const isValidName = (name) => {
 };
 
 /**
- * Check if birthdate is not empty.
+ * Check if birthdate can be converted as a date and if it corresponds to an age of at least PARTICIPANTS_MINIMUM_AGE.
  * @param {string} birthdate
  * @returns {boolean}
  */
 const isValidBirthdate = (birthdate) => {
-  return birthdate != "";
+  const date = new Date(birthdate);
+
+  if (!(date instanceof Date) || isNaN(date)) {
+    return false;
+  }
+
+  const now = Date.now();
+  const ONE_YEAR_IN_MILLISECONDS = 365.25 * 24 * 60 * 60 * 1000;
+  const age = (now - date) / ONE_YEAR_IN_MILLISECONDS;
+
+  return age >= PARTICIPANTS_MINIMUM_AGE;
 };
 
 /**
