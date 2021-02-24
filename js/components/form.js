@@ -32,7 +32,7 @@ const previousParticipationsError = document.querySelector(
   "#previous-participations + p"
 );
 
-const locationRadioadioButtons = document.querySelectorAll(
+const locationRadioButtons = document.querySelectorAll(
   'input[name="location"]'
 );
 const locationError = document.getElementById("location-error-field");
@@ -99,7 +99,7 @@ previousParticipations.onchange = () => {
 };
 
 // Check if a town has been selected:
-locationRadioadioButtons.forEach((btn) =>
+locationRadioButtons.forEach((btn) =>
   btn.addEventListener("change", () => {
     const checkedRadioButtons = document.querySelector(
       'input[name="location"]:checked'
