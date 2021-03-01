@@ -4,7 +4,7 @@ Code source du **Projet 4** - **_Créez une landing page avec JavaScript_** du p
 
 ## Page de démonstration
 
-Le rendu de ce code en est accessible sur cette [GitHub Page dédiée](https://logic-fabric.github.io/LoicMangin_4_30122020/).
+Le rendu de ce code est accessible sur cette [GitHub Page dédiée](https://logic-fabric.github.io/LoicMangin_4_30122020/).
 
 ## Sass
 
