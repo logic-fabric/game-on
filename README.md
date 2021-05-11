@@ -6,6 +6,10 @@ Code source du **Projet 4** - **_Créez une landing page avec JavaScript_** du p
 
 Le rendu de ce code est accessible sur cette [GitHub Page dédiée](https://logic-fabric.github.io/LoicMangin_4_30122020/).
 
+## Maquette de l'UI
+
+L'UI de ce projet a été réalisée à partir d'une [maquette Figma](https://www.figma.com/file/prxFGnSUoEhk6PTcMaJQim/UI-Design-GameOn-EN).
+
 ## Sass
 
 - [Installer Sass](https://sass-lang.com/install) sur votre machine.
