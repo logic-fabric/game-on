@@ -33,7 +33,7 @@ const previousParticipationsError = document.querySelector(
 );
 
 const locationRadioadioButtons = document.querySelectorAll(
-  'input[name="location"]'
+  "input[name='location']"
 );
 const locationError = document.getElementById("location-error-field");
 
@@ -43,107 +43,6 @@ const generalConditionsOptin = document.getElementById(
 const generalConditionsOptinError = document.querySelector(
   "#general-conditions-optin ~ p"
 );
-
-/* =======================
-   CHECK FIELDS ON THE FLY
-   ======================= */
-
-// Check first name validity:
-firstName.oninput = () => {
-  displayFirstNameValidity(firstName, firstNameError);
-};
-
-firstName.addEventListener("focusout", () => {
-  displayFirstNameValidity(firstName, firstNameError);
-});
-
-// Check last name validity:
-lastName.oninput = () => {
-  displayLastNameValidity(lastName, lastNameError);
-};
-
-lastName.addEventListener("focusout", () => {
-  displayLastNameValidity(lastName, lastNameError);
-});
-
-// Check email validity:
-email.oninput = () => {
-  displayEmailValidity(email, emailError);
-};
-
-email.addEventListener("focusout", () => {
-  displayEmailValidity(email, emailError);
-});
-
-// Check birthdate:
-birthdate.oninput = () => {
-  displayBirthdateValidity(birthdate, birthdateError);
-};
-birthdate.addEventListener("focusout", () => {
-  displayBirthdateValidity(birthdate, birthdateError);
-});
-
-// Check previous participations:
-previousParticipations.addEventListener("focusout", () => {
-  displayParticipationsValidity(
-    previousParticipations,
-    previousParticipationsError
-  );
-});
-
-previousParticipations.onchange = () => {
-  displayParticipationsValidity(
-    previousParticipations,
-    previousParticipationsError
-  );
-};
-
-// Check if a town has been selected:
-locationRadioadioButtons.forEach((btn) =>
-  btn.addEventListener("change", () => {
-    const checkedRadioButtons = document.querySelector(
-      'input[name="location"]:checked'
-    );
-
-    if (checkedRadioButtons !== null) {
-      locationError.textContent = "";
-      locationError.classList.remove("txt-danger");
-    } else {
-      locationError.textContent = LOCATION_MESSAGE;
-      locationError.classList.add("txt-danger");
-    }
-  })
-);
-
-// Check if general conditions have been checked:
-generalConditionsOptin.onchange = () => {
-  displayOptinValidity(generalConditionsOptin, generalConditionsOptinError);
-};
-
-/* ====================
-   CHECK FORM ON SUBMIT
-   ==================== */
-
-document.getElementById("modal-form").onsubmit = (e) => {
-  e.preventDefault();
-
-  removeAllErrors();
-
-  displayFirstNameValidity(firstName, firstNameError);
-  displayLastNameValidity(lastName, lastNameError);
-  displayEmailValidity(email, emailError);
-  displayBirthdateValidity(birthdate, birthdateError);
-  displayParticipationsValidity(
-    previousParticipations,
-    previousParticipationsError
-  );
-  displayLocationValidity(locationError);
-  displayOptinValidity(generalConditionsOptin, generalConditionsOptinError);
-
-  if (isValidForm()) {
-    displaySuccessfullSignin();
-  }
-};
 
 /* =================
    UTILITY FUNCTIONS
@@ -198,7 +97,7 @@ const isValidParticipationsQuantity = (quantity) => {
  */
 const isValidForm = () => {
   const checkedRadioButtons = document.querySelector(
-    'input[name="location"]:checked'
+    "input[name='location']:checked"
   );
 
   return (
@@ -313,7 +212,7 @@ const displayParticipationsValidity = (participationsField, errorField) => {
  */
 const displayLocationValidity = (errorField) => {
   const checkedRadioButtons = document.querySelector(
-    'input[name="location"]:checked'
+    "input[name='location']:checked"
   );
 
   if (checkedRadioButtons !== null) {
@@ -376,4 +275,105 @@ export const removeAllErrors = () => {
   for (let inputField of inputFields) {
     inputField.classList.remove("border-danger");
   }
+};
+
+/* ====================
+   CHECK FORM ON SUBMIT
+   ==================== */
+
+document.getElementById("modal-form").onsubmit = (e) => {
+  e.preventDefault();
+
+  removeAllErrors();
+
+  displayFirstNameValidity(firstName, firstNameError);
+  displayLastNameValidity(lastName, lastNameError);
+  displayEmailValidity(email, emailError);
+  displayBirthdateValidity(birthdate, birthdateError);
+  displayParticipationsValidity(
+    previousParticipations,
+    previousParticipationsError
+  );
+  displayLocationValidity(locationError);
+  displayOptinValidity(generalConditionsOptin, generalConditionsOptinError);
+
+  if (isValidForm()) {
+    displaySuccessfullSignin();
+  }
+};
+
+/* =======================
+   CHECK FIELDS ON THE FLY
+   ======================= */
+
+// Check first name validity:
+firstName.oninput = () => {
+  displayFirstNameValidity(firstName, firstNameError);
+};
+
+firstName.addEventListener("focusout", () => {
+  displayFirstNameValidity(firstName, firstNameError);
+});
+
+// Check last name validity:
+lastName.oninput = () => {
+  displayLastNameValidity(lastName, lastNameError);
+};
+
+lastName.addEventListener("focusout", () => {
+  displayLastNameValidity(lastName, lastNameError);
+});
+
+// Check email validity:
+email.oninput = () => {
+  displayEmailValidity(email, emailError);
+};
+
+email.addEventListener("focusout", () => {
+  displayEmailValidity(email, emailError);
+});
+
+// Check birthdate:
+birthdate.oninput = () => {
+  displayBirthdateValidity(birthdate, birthdateError);
+};
+birthdate.addEventListener("focusout", () => {
+  displayBirthdateValidity(birthdate, birthdateError);
+});
+
+// Check previous participations:
+previousParticipations.addEventListener("focusout", () => {
+  displayParticipationsValidity(
+    previousParticipations,
+    previousParticipationsError
+  );
+});
+
+previousParticipations.onchange = () => {
+  displayParticipationsValidity(
+    previousParticipations,
+    previousParticipationsError
+  );
+};
+
+// Check if a town has been selected:
+locationRadioadioButtons.forEach((btn) =>
+  btn.addEventListener("change", () => {
+    const checkedRadioButtons = document.querySelector(
+      "input[name='location']:checked"
+    );
+
+    if (checkedRadioButtons !== null) {
+      locationError.textContent = "";
+      locationError.classList.remove("txt-danger");
+    } else {
+      locationError.textContent = LOCATION_MESSAGE;
+      locationError.classList.add("txt-danger");
+    }
+  })
+);
+
+// Check if general conditions have been checked:
+generalConditionsOptin.onchange = () => {
+  displayOptinValidity(generalConditionsOptin, generalConditionsOptinError);
 };

@@ -6,6 +6,7 @@ $open-modal-duration: 800ms;
 
     opacity: 0;
   }
+
   to {
     top: 0;
 
@@ -27,6 +28,8 @@ $open-modal-duration: 800ms;
 }
 
 .c-modal {
+  @include medium-box-shadow;
+
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -35,7 +38,6 @@ $open-modal-duration: 800ms;
   margin: 5rem auto;
   padding: 2.5rem 2rem 1rem 2rem;
   border-radius: 0.5rem;
-  @include medium-box-shadow;
   overflow: hidden;
 
   color: white;
@@ -87,6 +89,10 @@ $open-modal-duration: 800ms;
 
   &--signin-form {
     height: auto;
+  }
+
+  &__button-box {
+    display: flex;
   }
 
   &--signin-success {
@@ -174,7 +180,7 @@ $open-modal-duration: 800ms;
     }
 
     &.no-mt {
-      margin: 0rem 0 0.875rem 0;
+      margin: 0 0 0.875rem 0;
     }
   }
 
@@ -252,10 +258,6 @@ $open-modal-duration: 800ms;
     &:checked + label .c-modal__radio-btn::after {
       opacity: 1;
     }
-  }
-
-  &__button-box {
-    display: flex;
   }
 
   button {

@@ -14,8 +14,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -30,11 +30,11 @@ a {
 
 abbr {
   padding: 0 0.125rem;
+
   &[title] {
     text-decoration: none;
   }
 }
-
 
 fieldset {
   padding: 0;

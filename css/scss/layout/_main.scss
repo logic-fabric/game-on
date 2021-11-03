@@ -4,11 +4,12 @@ main {
 }
 
 .l-hero {
+  @include medium-box-shadow;
+
   position: relative;
 
   height: 40rem;
   border-radius: 0.5rem;
-  @include medium-box-shadow;
   overflow: hidden;
 
   background: $neutral-800;
@@ -83,8 +84,9 @@ main {
 
 @media (max-width: $small-breakpoint - 1) {
   .l-hero {
-    height: auto;
     @include no-box-shadow;
+
+    height: auto;
 
     background: white;
 

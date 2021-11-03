@@ -101,10 +101,11 @@ header {
 
   nav.side-nav {
     ul {
+      @include medium-box-shadow;
+
       display: flex;
 
       padding: 0.25rem 0.5rem;
-      @include medium-box-shadow;
 
       font-size: $txt-size;
     }
